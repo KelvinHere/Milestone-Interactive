@@ -1,39 +1,35 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+<h1 style="text-align: center;">Pairs Game - Interactive FrontEnd</h1>
 
-Welcome USER_NAME,
+The Matching Memory Game:
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+You are presented with a board of tiles.  All tiles are exposed and show their contents.  After three seconds the tiles are hidden.  The game is to select each pair of matching tiles until there are none left.  You gain ten points for a match, or -1 point for a fail.
 
-## Gitpod Reminders
+* [Pairs Game](https://kelvinhere.github.io/Milestone-FrontEnd/ 'Pairs website GitHub pages link') 
+* [This Repository](https://github.com/KelvinHere/Milestone-Interactive/ 'Gitpod repository link')
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
+1. [**UX**](#ux)
+    * [**Project Purpose**](#project-purpose)
+    * [**Wireframe designs**](#wireframe-designs)
 
-A blue button should appear to click: *Make Public*,
+## UX
 
-Another blue button should appear to click: *Open Browser*.
+#### Project Purpose
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This websites purpose is to provide a fun challenging game that can scale in difficulty for all ages.
 
-A blue button should appear to click: *Make Public*,
+#### Player Experience
 
-Another blue button should appear to click: *Open Browser*.
+* The player will be presented with a start game menu where the player will be given the simple instructions of the game and a choice of board size.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+* Once the player starts a game they will be shown the exposed board with a countdown after which the board tiles are hidden
 
-## Updates Since The Instructional Video
+* The player is then prompted to select two tiles, the score is either increaced of decreaced
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+* Once all tiles are found the game is won, if the score goes negative you loose
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Wireframes
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![GameDesign](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/wireframes/wireframes.jpg?raw=true "Mobile mockup index and menu")
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
