@@ -1,7 +1,7 @@
 function createGrid(rows, cols){
     $(".board-container").empty();
     $(".board-container").append(`<table class="game-board"></table>`)
-    gameBoard = $(".game-board");
+    let gameBoard = $(".game-board");
 
     /*Create Grid*/
     for (let r = rows-1; r > -1; r--) {
@@ -18,7 +18,31 @@ function createGrid(rows, cols){
     $(".game-board").css("width", "100%");
 }
 
+function createRandomTilePositions(rows, cols) {
+    let pairsNeeded = (rows*cols)/2;
+    let pairs = new Array(rows);
+
+    console.log(pairs.length);
+
+    /*create list of pairs in array and shuffle*/
+    for (let i = 0; i < pairsNeeded; i++) {
+        pairs.push(i);
+        pairs.push(i);
+    }
+    console.log(pairs);
+
+    for (let r = 0; r < rows; r++) {
+        pairs.append
+        for (let c = 0; c < cols; c++) {
+
+        }
+    }
+    
+}
+
+/*================================================Buttons for different grid sizes*/
 $("#btn4x4").click(function() {
+    let tilePositions = createRandomTilePositions(4,4);
     createGrid(4,4);
 })
 
