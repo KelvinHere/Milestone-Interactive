@@ -37,24 +37,13 @@ function createRandomTilePositions(rows, cols) {
             randomPairsBoard[r].push(pairs[randomElement]);
             pairs.splice(randomElement, 1);
         }
-        console.log(pairs[r]);
+        console.log(randomPairsBoard[r]);
     }
-
     return randomPairsBoard;
 }
 
 /*================================================Buttons for different grid sizes*/
-$("#btn4x4").click(function() {
-    let tilePositions = createRandomTilePositions(4,4);
-    createGrid(4,4, tilePositions);
-})
-
-$("#btn6x6").click(function() {
-    createGrid(6,6);
-})
-
-$("#btn8x8").click(function() {
-    createGrid(8,8);
-})
- 
-
+function gridButton(rows, cols) {
+    let tilePositions = createRandomTilePositions(rows,cols);
+    createGrid(rows,cols, tilePositions);
+}
