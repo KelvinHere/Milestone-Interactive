@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 20fr 1fr;
+}
+
+header {
+    background: red;
+}
+
+footer {
+    background: green;
+}
+
+.game-container {
+    background: lightblue;
+}
