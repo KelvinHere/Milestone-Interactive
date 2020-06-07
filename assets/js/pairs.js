@@ -7,7 +7,7 @@ function createGrid(rows, cols, tilePositions){
     for (let r = rows-1; r > -1; r--) {
         $(gameBoard).append(`<tr class="row-${r}">`);
         for (let c = 0; c < cols; c++){
-            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell">${tilePositions[r][c]}</td>`);
+            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><button class="tile-button" onclick="tileSelected('${r},${c}')">${tilePositions[r][c]}</button></td>`);
         }
         $(gameBoard).append(`</tr>`);
     }
@@ -42,8 +42,12 @@ function createRandomTilePositions(rows, cols) {
     return randomPairsBoard;
 }
 
-/*================================================Buttons for different grid sizes*/
+/*==============================When buttons are pressed create tile positions and html grid*/
 function gridButton(rows, cols) {
     let tilePositions = createRandomTilePositions(rows,cols);
     createGrid(rows,cols, tilePositions);
+}
+
+function tileSelected(row, col) {
+    console.log(`${row},${col} = ${tilePositions[row][col]}`);
 }

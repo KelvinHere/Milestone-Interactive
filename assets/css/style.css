@@ -31,3 +31,13 @@ footer {
 .score-container {
     background: yellow;
 }
+
+td {
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.tile-button {
+    height: 100%;
+    width: 100%;
+}
