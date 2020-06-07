@@ -12,8 +12,9 @@ function createGrid(rows, cols){
     }
 
     /*Create CSS for Grid*/
-    $(".game-board td").css("height", "25%");
+    calculatedCellHeight = 100 / rows
+    $(".game-board td").css("height", calculatedCellHeight);
     $(".game-board").css("width", "100%");
 }
 
-createGrid(4,4);
+createGrid(8,8);
