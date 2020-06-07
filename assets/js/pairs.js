@@ -1,4 +1,4 @@
-function createGrid(rows, cols){
+function createGrid(rows, cols, tilePositions){
     $(".board-container").empty();
     $(".board-container").append(`<table class="game-board"></table>`)
     let gameBoard = $(".game-board");
@@ -7,7 +7,7 @@ function createGrid(rows, cols){
     for (let r = rows-1; r > -1; r--) {
         $(gameBoard).append(`<tr class="row-${r}">`);
         for (let c = 0; c < cols; c++){
-            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell">${r}:${c}</td>`);
+            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell">${tilePositions[r][c]}</td>`);
         }
         $(gameBoard).append(`</tr>`);
     }
@@ -20,30 +20,33 @@ function createGrid(rows, cols){
 
 function createRandomTilePositions(rows, cols) {
     let pairsNeeded = (rows*cols)/2;
-    let pairs = new Array(rows);
+    let pairs = [];
+    let randomPairsBoard = [];
 
-    console.log(pairs.length);
-
-    /*create list of pairs in array and shuffle*/
-    for (let i = 0; i < pairsNeeded; i++) {
-        pairs.push(i);
-        pairs.push(i);
+    /*create list of pairs in array*/
+    for (let tileID = 0; tileID < pairsNeeded; tileID++) {
+        pairs.push(tileID);
+        pairs.push(tileID);
     }
-    console.log(pairs);
 
+    /*get random element from pairsNeeded and push to randomPairsBoard*/
     for (let r = 0; r < rows; r++) {
-        pairs.append
+        randomPairsBoard.push([]);
         for (let c = 0; c < cols; c++) {
-
+            let randomElement = Math.floor(Math.random() * Math.floor(pairs.length));
+            randomPairsBoard[r].push(pairs[randomElement]);
+            pairs.splice(randomElement, 1);
         }
+        console.log(pairs[r]);
     }
-    
+
+    return randomPairsBoard;
 }
 
 /*================================================Buttons for different grid sizes*/
 $("#btn4x4").click(function() {
     let tilePositions = createRandomTilePositions(4,4);
-    createGrid(4,4);
+    createGrid(4,4, tilePositions);
 })
 
 $("#btn6x6").click(function() {
