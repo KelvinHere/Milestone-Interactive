@@ -23,8 +23,9 @@ footer {
     grid-template-columns: 8fr 2fr;
 }
 
-.play-area-container {
-
+.game-board {
+    width: 100%;
+    height: 100%;
 }
 
 .score-container {
