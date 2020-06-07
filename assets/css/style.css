@@ -19,4 +19,14 @@ footer {
 
 .game-container {
     background: lightblue;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+.play-area-container {
+
+}
+
+.score-container {
+    background: yellow;
 }
