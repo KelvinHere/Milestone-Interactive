@@ -1,4 +1,5 @@
 function createGrid(rows, cols){
+    $(".board-container").empty();
     $(".board-container").append(`<table class="game-board"></table>`)
     gameBoard = $(".game-board");
 
@@ -11,10 +12,22 @@ function createGrid(rows, cols){
         $(gameBoard).append(`</tr>`);
     }
 
-    /*Create CSS for Grid*/
+    /*Size cells to fill thier container*/
     calculatedCellHeight = 100 / rows
     $(".game-board td").css("height", calculatedCellHeight);
     $(".game-board").css("width", "100%");
 }
 
-createGrid(8,8);
+$("#btn4x4").click(function() {
+    createGrid(4,4);
+})
+
+$("#btn6x6").click(function() {
+    createGrid(6,6);
+})
+
+$("#btn8x8").click(function() {
+    createGrid(8,8);
+})
+ 
+
