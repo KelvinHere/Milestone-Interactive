@@ -56,8 +56,8 @@ function checkTilesMatch(tileOne, tileTwo) {
     console.log(tileOne.attr("id"));
     console.log(tileTwo.attr("id"));
     if (tileOne.attr("id") === tileTwo.attr("id")){
-        tileOne.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center");
-        tileTwo.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center");
+        tileOne.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center no-repeat");
+        tileTwo.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center no-repeat");
         checkForWin();
     } else {
         tileOne.removeClass("background-selected active");
