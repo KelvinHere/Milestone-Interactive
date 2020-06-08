@@ -46,3 +46,7 @@ td {
 .selected {
     background-color: purple;
 }
+
+.solved {
+    background: url('../images/tick.jpg') center no-repeat;
+}

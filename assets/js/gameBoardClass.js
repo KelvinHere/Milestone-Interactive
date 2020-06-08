@@ -4,7 +4,7 @@ let gameBoard = {
     boardArray: [],
     aSelection: undefined,
     bSelection: undefined,
-    points: 0,
+    score: 0,
 
     setSize: function(r, c) {
         this.rows = r
@@ -48,7 +48,7 @@ let gameBoard = {
         for (let r = 0; r < this.rows; r++) {
             $(gameBoard).append(`<tr class="row-${r}">`);
             for (let c = 0; c < this.cols; c++){
-                $(gameBoard).children('tr').last().append(`<td class="col-${c} tile unsolved" onclick="gameBoard.selectTile(${r},${c})">${this.boardArray[r][c]}</td>`);
+                $(gameBoard).children('tr').last().append(`<td class="col-${c} tile unsolved" onclick="gameBoard.selectTile(${r},${c})"></td>`);
             }
             $(gameBoard).append(`</tr>`);
         }
@@ -59,22 +59,28 @@ let gameBoard = {
         $(".game-board").css("width", "100%");
     },
 
+    checkWinLose: function() {
+        let unsolvedTiles = $(".game-board").find(".unsolved").length;
+        if (unsolvedTiles === 0) {
+            alert('win');
+        }
+    },
+
     compareTiles: function(aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
         /*Match*/
         if (this.boardArray[aRow][aCol] === this.boardArray[bRow][bCol]) {
-            aTileRef.removeClass("selected unsolved");
-            bTileRef.removeClass("selected unsolved");
+            aTileRef.removeClass("selected unsolved").addClass("solved");
+            bTileRef.removeClass("selected unsolved").addClass("solved");
             this.aSelection = undefined;
             this.bSelection = undefined;
-            console.log('match');
         } else {
         /*Missmatch*/
             aTileRef.removeClass("selected");
             bTileRef.removeClass("selected");
             this.aSelection = undefined;
             this.bSelection = undefined;
-            console.log('missmatch');
         }
+        this.checkWinLose();
     },
 
     selectTile: function(r, c) {
@@ -83,16 +89,14 @@ let gameBoard = {
         /*Toggle selection and if 2 tiles are selected send to be compared*/
         if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
             currentTile.addClass("selected");
+            /*Hold tile in aSelection if empty or bSelection if aSelection is occupied*/
             if (this.aSelection === undefined) {
                 this.aSelection = [r,c,currentTile];
             } else {
                 this.bSelection = [r,c,currentTile];
                 this.compareTiles(this.aSelection[0], this.aSelection[1], this.aSelection[2], this.bSelection[0], this.bSelection[1], this.bSelection[2]);
             }
-        } else if (currentTile.hasClass("selected")) {
-            currentTile.removeClass("selected");
         }
     }
-
 }
 
