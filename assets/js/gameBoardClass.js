@@ -2,7 +2,6 @@ let gameBoard = {
     rows: 0,
     cols: 0,
     boardArray: [],
-    selected: 0,
     points: 0,
 
     setSize: function(r, c) {
@@ -44,19 +43,33 @@ let gameBoard = {
         let gameBoard = $(".game-board");
 
         /*Create Grid*/
-        for (let r = this.rows-1; r > -1; r--) {
+        for (let r = 0; r < this.rows; r++) {
             $(gameBoard).append(`<tr class="row-${r}">`);
             for (let c = 0; c < this.cols; c++){
-                $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell tile unsolved" id="${this.boardArray[r][c]}" onclick="tileSelected(${r},${c})">${this.boardArray[r][c]}</td>`);
+                $(gameBoard).children('tr').last().append(`<td class="col-${c} tile unsolved" onclick="gameBoard.selectTile(${r},${c})">${this.boardArray[r][c]}</td>`);
             }
             $(gameBoard).append(`</tr>`);
         }
 
         /*Size cells to fill thier container*/
-        calculatedCellHeight = 100 / rows
+        calculatedCellHeight = 100 / this.rows;
         $(".game-board td").css("height", calculatedCellHeight);
         $(".game-board").css("width", "100%");
+    },
+
+    selectTile: function(r, c) {
+        let currentTile = $(`.row-${r} > .col-${c}`);
+
+        /*Toggle selection*/
+        if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
+            currentTile.addClass("selected");
+        } else if (currentTile.hasClass("selected")) {
+            currentTile.removeClass("selected");
+        }
+
+        /*Check how many tiles are selected, if 2, compare*/
+        let activeTilesList = $(".game-board").find(".selected");
+        if (activeTilesList.length === 2);
     }
-  
 }
 
