@@ -7,9 +7,7 @@ function createGrid(rows, cols, tilePositions){
     for (let r = rows-1; r > -1; r--) {
         $(gameBoard).append(`<tr class="row-${r}">`);
         for (let c = 0; c < cols; c++){
-            /*$(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><button class="tile-button" onclick="tileSelected(${r},${c},${tilePositions[r][c]})">${tilePositions[r][c]}</button></td>`);*/
-            /*$(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><input type="image" value="${tilePositions[r][c]}" class="tile" onclick="tileSelected(${r},${c},${tilePositions[r][c]})"></input></td>`);*/
-            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell tile" id="${tilePositions[r][c]}" onclick="tileSelected(${r},${c})">${tilePositions[r][c]}</td>`);
+            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell tile unsolved" id="${tilePositions[r][c]}" onclick="tileSelected(${r},${c})">${tilePositions[r][c]}</td>`);
         }
         $(gameBoard).append(`</tr>`);
     }
@@ -44,12 +42,23 @@ function createRandomTilePositions(rows, cols) {
     return randomPairsBoard;
 }
 
+function checkForWin() {
+    let unsolvedTiles = $(".game-board").find(".unsolved").length;
+    console.log(typeof(unsolvedTiles));
+    console.log(unsolvedTiles);
+    if (unsolvedTiles === 0){
+        $(".board-container").empty();
+        $(".board-container").append(`<p>You Win</p>`);
+    }
+}
+
 function checkTilesMatch(tileOne, tileTwo) {
     console.log(tileOne.attr("id"));
     console.log(tileTwo.attr("id"));
     if (tileOne.attr("id") === tileTwo.attr("id")){
-        tileOne.addClass("solved").removeClass("active").css("background", "url('assets/images/tick.jpg') center");
-        tileTwo.addClass("solved").removeClass("active").css("background", "url('assets/images/tick.jpg') center");
+        tileOne.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center");
+        tileTwo.removeClass("active unsolved").css("background", "url('assets/images/tick.jpg') center");
+        checkForWin();
     } else {
         tileOne.removeClass("background-selected active");
         tileTwo.removeClass("background-selected active");
