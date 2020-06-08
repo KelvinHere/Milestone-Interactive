@@ -7,7 +7,8 @@ function createGrid(rows, cols, tilePositions){
     for (let r = rows-1; r > -1; r--) {
         $(gameBoard).append(`<tr class="row-${r}">`);
         for (let c = 0; c < cols; c++){
-            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><button class="tile-button" onclick="tileSelected('${r},${c}')">${tilePositions[r][c]}</button></td>`);
+            /*$(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><button class="tile-button" onclick="tileSelected(${r},${c},${tilePositions[r][c]})">${tilePositions[r][c]}</button></td>`);*/
+            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><input type="image" value="${tilePositions[r][c]}" class="tile" onclick="tileSelected(${r},${c},${tilePositions[r][c]})"></input></td>`);
         }
         $(gameBoard).append(`</tr>`);
     }
@@ -42,12 +43,40 @@ function createRandomTilePositions(rows, cols) {
     return randomPairsBoard;
 }
 
+function checkTilesMatch(tileOne, tileTwo) {
+
+    if (tileOne.val() === tileTwo.val()){
+        tileOne.addClass("solved").hide().removeClass("active");
+        tileTwo.addClass("solved").hide().removeClass("active");
+    } else {
+        tileOne.css("background-color", "rgb(173,216,230)");
+        tileTwo.css("background-color", "rgb(173,216,230)");
+    }
+}
+
+function tileSelected(row, col, tileContents) {
+    let currentTile = $(`.row-${row} > .col-${col} > input`);
+
+    /*Toggle tile active*/
+    if (!currentTile.hasClass("solved")) {
+        if (currentTile.hasClass("active")) {
+        currentTile.css("background-color", "	rgb(173,216,230)");
+        currentTile.removeClass("active");
+        } else {
+        currentTile.css("background-color", "rgb(128, 0, 128)");
+        currentTile.addClass("active");
+        }
+    }
+
+    /*If two tiles selected check if they match*/
+    let activeTilesList = $(".game-board .table-cell").find(".active");
+    if (activeTilesList.length == 2) {
+        checkTilesMatch($(activeTilesList[0]), $(activeTilesList[1]));
+    }
+}
+
 /*==============================When buttons are pressed create tile positions and html grid*/
 function gridButton(rows, cols) {
     let tilePositions = createRandomTilePositions(rows,cols);
     createGrid(rows,cols, tilePositions);
-}
-
-function tileSelected(row, col) {
-    console.log(`${row},${col} = ${tilePositions[row][col]}`);
 }

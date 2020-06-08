@@ -26,6 +26,7 @@ footer {
 .game-board {
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .score-container {
@@ -37,7 +38,24 @@ td {
     vertical-align: middle;
 }
 
-.tile-button {
+.tile {
     height: 100%;
     width: 100%;
+    background-color: lightblue;
+    border: none;
+}
+
+.table-cell {
+    background: url("../images/tick.jpg") center;
+    width: auto;
+    
+}
+
+.tile:hover {
+    background-color: blue;
+}
+
+.input {
+    padding: none;
+    margin: none;
 }
