@@ -2,6 +2,8 @@ let gameBoard = {
     rows: 0,
     cols: 0,
     boardArray: [],
+    aSelection: undefined,
+    bSelection: undefined,
     points: 0,
 
     setSize: function(r, c) {
@@ -57,19 +59,40 @@ let gameBoard = {
         $(".game-board").css("width", "100%");
     },
 
+    compareTiles: function(aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
+        /*Match*/
+        if (this.boardArray[aRow][aCol] === this.boardArray[bRow][bCol]) {
+            aTileRef.removeClass("selected unsolved");
+            bTileRef.removeClass("selected unsolved");
+            this.aSelection = undefined;
+            this.bSelection = undefined;
+            console.log('match');
+        } else {
+        /*Missmatch*/
+            aTileRef.removeClass("selected");
+            bTileRef.removeClass("selected");
+            this.aSelection = undefined;
+            this.bSelection = undefined;
+            console.log('missmatch');
+        }
+    },
+
     selectTile: function(r, c) {
         let currentTile = $(`.row-${r} > .col-${c}`);
 
-        /*Toggle selection*/
+        /*Toggle selection and if 2 tiles are selected send to be compared*/
         if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
             currentTile.addClass("selected");
+            if (this.aSelection === undefined) {
+                this.aSelection = [r,c,currentTile];
+            } else {
+                this.bSelection = [r,c,currentTile];
+                this.compareTiles(this.aSelection[0], this.aSelection[1], this.aSelection[2], this.bSelection[0], this.bSelection[1], this.bSelection[2]);
+            }
         } else if (currentTile.hasClass("selected")) {
             currentTile.removeClass("selected");
         }
-
-        /*Check how many tiles are selected, if 2, compare*/
-        let activeTilesList = $(".game-board").find(".selected");
-        if (activeTilesList.length === 2);
     }
+
 }
 
