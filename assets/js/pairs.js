@@ -8,7 +8,8 @@ function createGrid(rows, cols, tilePositions){
         $(gameBoard).append(`<tr class="row-${r}">`);
         for (let c = 0; c < cols; c++){
             /*$(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><button class="tile-button" onclick="tileSelected(${r},${c},${tilePositions[r][c]})">${tilePositions[r][c]}</button></td>`);*/
-            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><input type="image" value="${tilePositions[r][c]}" class="tile" onclick="tileSelected(${r},${c},${tilePositions[r][c]})"></input></td>`);
+            /*$(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell"><input type="image" value="${tilePositions[r][c]}" class="tile" onclick="tileSelected(${r},${c},${tilePositions[r][c]})"></input></td>`);*/
+            $(gameBoard).children('tr').last().append(`<td class="col-${c} table-cell tile" id="${tilePositions[r][c]}" onclick="tileSelected(${r},${c})">${tilePositions[r][c]}</td>`);
         }
         $(gameBoard).append(`</tr>`);
     }
@@ -44,33 +45,33 @@ function createRandomTilePositions(rows, cols) {
 }
 
 function checkTilesMatch(tileOne, tileTwo) {
-
-    if (tileOne.val() === tileTwo.val()){
-        tileOne.addClass("solved").hide().removeClass("active");
-        tileTwo.addClass("solved").hide().removeClass("active");
+    console.log(tileOne.attr("id"));
+    console.log(tileTwo.attr("id"));
+    if (tileOne.attr("id") === tileTwo.attr("id")){
+        tileOne.addClass("solved").removeClass("active").css("background", "url('assets/images/tick.jpg') center");
+        tileTwo.addClass("solved").removeClass("active").css("background", "url('assets/images/tick.jpg') center");
     } else {
-        tileOne.css("background-color", "rgb(173,216,230)");
-        tileTwo.css("background-color", "rgb(173,216,230)");
+        tileOne.removeClass("background-selected active");
+        tileTwo.removeClass("background-selected active");
     }
 }
 
-function tileSelected(row, col, tileContents) {
-    let currentTile = $(`.row-${row} > .col-${col} > input`);
-
+function tileSelected(row, col) {
+    let currentTile = $(`.row-${row} > .col-${col}`);
+    console.log(currentTile);
     /*Toggle tile active*/
-    if (!currentTile.hasClass("solved")) {
-        if (currentTile.hasClass("active")) {
-        currentTile.css("background-color", "	rgb(173,216,230)");
+    if (currentTile.hasClass("active")) {
+        currentTile.removeClass("background-selected");
         currentTile.removeClass("active");
-        } else {
-        currentTile.css("background-color", "rgb(128, 0, 128)");
+    } else {
+        currentTile.addClass("background-selected");
         currentTile.addClass("active");
-        }
     }
 
+
     /*If two tiles selected check if they match*/
-    let activeTilesList = $(".game-board .table-cell").find(".active");
-    if (activeTilesList.length == 2) {
+    let activeTilesList = $(".game-board").find(".active");
+    if (activeTilesList.length > 1) {
         checkTilesMatch($(activeTilesList[0]), $(activeTilesList[1]));
     }
 }

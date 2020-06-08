@@ -39,23 +39,14 @@ td {
 }
 
 .tile {
-    height: 100%;
-    width: 100%;
-    background-color: lightblue;
     border: none;
+    background-color: lightblue;
 }
 
-.table-cell {
-    background: url("../images/tick.jpg") center;
-    width: auto;
-    
-}
-
-.tile:hover {
+/*.tile:hover {
     background-color: blue;
-}
+}*/
 
-.input {
-    padding: none;
-    margin: none;
+.background-selected {
+    background-color: purple;
 }
