@@ -5,7 +5,7 @@ let gameBoard = {
     aSelection: undefined,
     bSelection: undefined,
     revealDuration: 1000,
-    timeLeft: 60,
+    timeLeft: 30,
     timer: undefined,
 
     initialize: function(r, c) {
@@ -38,7 +38,7 @@ let gameBoard = {
         $(".board-container").empty();
         $(".score-container").empty();
         $(".board-container").append(`<table class="game-board"></table>`)
-        $(".score-container").append(`<h2>Time Left</h2><h3 id="Timer">60</h3>`)
+        $(".score-container").append(`<h2>Time Left</h2><h3 id="Timer">${this.timeLeft}</h3>`)
         let gameBoard = $(".game-board");
         let self = this;
 
