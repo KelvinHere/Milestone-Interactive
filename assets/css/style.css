@@ -18,7 +18,7 @@ footer {
 }
 
 .game-container {
-    background: lightblue;
+    background: darkblue;
     display: grid;
     grid-template-columns: 8fr 2fr;
 }
@@ -40,7 +40,7 @@ td {
 
 .tile {
     border: none;
-    background-color: lightblue;
+    background: url('../images/question.jpg') center no-repeat;
 }
 
 .selected {

@@ -67,6 +67,9 @@ let gameBoard = {
     },
 
     compareTiles: function(aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
+        /*Hide Content*/
+        aTileRef.css("background-image", "");
+        bTileRef.css("background-image", "");
         /*Match*/
         if (this.boardArray[aRow][aCol] === this.boardArray[bRow][bCol]) {
             aTileRef.removeClass("selected unsolved").addClass("solved");
@@ -83,17 +86,26 @@ let gameBoard = {
         this.checkWinLose();
     },
 
+    showTile: function(tileToShow, tileContent) {
+        console.log(tileContent);
+        console.log(tileToShow);
+        tileToShow.css("background-image", `url(assets/images/tiles/${tileContent}.jpg)`)
+        return
+    },
+
     selectTile: function(r, c) {
         let currentTile = $(`.row-${r} > .col-${c}`);
 
-        /*Toggle selection and if 2 tiles are selected send to be compared*/
         if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
             currentTile.addClass("selected");
-            /*Hold tile in aSelection if empty or bSelection if aSelection is occupied*/
+            /*Select & store tile 1 ref*/
             if (this.aSelection === undefined) {
                 this.aSelection = [r,c,currentTile];
+                this.showTile(currentTile, this.boardArray[r][c]);
             } else {
+                /*Select & store tile 2 ref then compare tiles*/
                 this.bSelection = [r,c,currentTile];
+                this.showTile(currentTile, this.boardArray[r][c]);
                 this.compareTiles(this.aSelection[0], this.aSelection[1], this.aSelection[2], this.bSelection[0], this.bSelection[1], this.bSelection[2]);
             }
         }
