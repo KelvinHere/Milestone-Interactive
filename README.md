@@ -4,7 +4,7 @@ Pairs - The Matching Memory Game:
 
 You are presented with a board of tiles.  The game is to select each pair of matching tiles until there are none left.  You have a given amount of time to win.
 
-* [Pairs Game](https://kelvinhere.github.io/Milestone-Interactive/ 'Pairs website GitHub pages link') 
+* [Pairs Game](https://kelvinhere.github.io/Milestone-Interactive/ 'Pairs website GitHub pages link')
 * [This Repository](https://github.com/KelvinHere/Milestone-Interactive/ 'Gitpod repository link')
 
 ## Contents
