@@ -5,6 +5,7 @@ let gameBoard = {
     aSelection: undefined,
     bSelection: undefined,
     revealDuration: 1000,
+    timeLeft: 60,
 
     initialize: function(r, c) {
         this.rows = r
@@ -36,6 +37,7 @@ let gameBoard = {
         $(".board-container").empty();
         $(".score-container").empty();
         $(".board-container").append(`<table class="game-board"></table>`)
+        $(".score-container").append(`<h2>Time Left</h2><h3 id="Timer">60</h3>`)
         let gameBoard = $(".game-board");
 
         /*Create Grid and assign row and column numbers to each*/
@@ -51,6 +53,20 @@ let gameBoard = {
         calculatedCellHeight = 100 / this.rows;
         $(".game-board td").css("height", calculatedCellHeight);
         $(".game-board").css("width", "100%");
+
+        /*Start Timer*/
+        this.countdownTimer();
+    },
+
+    countdownTimer: function() {
+        setInterval(function() {
+            if (this.timeLeft >= 0) {
+                this.timeLeft --;
+                $("#Timer").text(this.timeLeft);
+                console.log(timeLeft);
+                clearInterval(setInterval);
+            }
+        }, 1000)
     },
 
     checkWinLose: function() {

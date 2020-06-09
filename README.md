@@ -31,3 +31,16 @@ This websites purpose is to provide a fun challenging game that can scale in dif
 
 ![GameDesign](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/wireframes/wireframes.jpg?raw=true "Mobile mockup index and menu")
 
+## Credits
+ 
+- Created by KelvinHere
+
+### Content
+
+- Contents of this website created by KelvinHere
+
+### Media
+
+### Acknowledgements
+
+* [w3schools](https://www.w3schools.com/) - For documentation on scope
