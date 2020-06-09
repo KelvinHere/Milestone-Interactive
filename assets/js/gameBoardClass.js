@@ -5,8 +5,9 @@ let gameBoard = {
     aSelection: undefined,
     bSelection: undefined,
     revealDuration: 1000,
-    timeLeft: 30,
+    timeLeft: 5,
     timer: undefined,
+    winPossible: true,
 
     initialize: function(r, c) {
         this.rows = r
@@ -65,6 +66,7 @@ let gameBoard = {
         $("#Timer").text(self.timeLeft);
         /*Lose state*/
         if (self.timeLeft == 0) {
+            self.winPossible = false;
             clearInterval(self.timer);
             $(".score-container").empty();
             $(".board-container").empty();
@@ -76,7 +78,7 @@ let gameBoard = {
     checkWin: function() {
         let unsolvedTiles = $(".game-board").find(".unsolved").length;
         /*Win State*/
-        if (unsolvedTiles === 0) {
+        if (unsolvedTiles === 0 && this.winPossible === true) {
             $(".score-container").empty();
             $(".score-container").append(`<h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a>`);
             clearInterval(this.timer);
