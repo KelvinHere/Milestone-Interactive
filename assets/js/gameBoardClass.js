@@ -4,19 +4,11 @@ let gameBoard = {
     boardArray: [],
     aSelection: undefined,
     bSelection: undefined,
-    score: 0,
+    revealDuration: 1000,
 
-    setSize: function(r, c) {
+    initialize: function(r, c) {
         this.rows = r
         this.cols = c
-        this.initialize();
-    },
-
-    getSize: function() {
-        console.log(this.rows, this.cols);
-    },
-
-    initialize: function() {
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
 
@@ -40,11 +32,13 @@ let gameBoard = {
     },
 
     createHTMLGrid: function() {
+        /*Empty play area and create a new blank table*/
         $(".board-container").empty();
+        $(".score-container").empty();
         $(".board-container").append(`<table class="game-board"></table>`)
         let gameBoard = $(".game-board");
 
-        /*Create Grid*/
+        /*Create Grid and assign row and column numbers to each*/
         for (let r = 0; r < this.rows; r++) {
             $(gameBoard).append(`<tr class="row-${r}">`);
             for (let c = 0; c < this.cols; c++){
@@ -62,51 +56,59 @@ let gameBoard = {
     checkWinLose: function() {
         let unsolvedTiles = $(".game-board").find(".unsolved").length;
         if (unsolvedTiles === 0) {
-            alert('win');
+            $(".score-container").append(`<h2>Winner!!!</h2><a href="index.html">Main Menu</a>`);
         }
-    },
-
-    compareTiles: function(aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
-        /*Hide Content*/
-        aTileRef.css("background-image", "");
-        bTileRef.css("background-image", "");
-        /*Match*/
-        if (this.boardArray[aRow][aCol] === this.boardArray[bRow][bCol]) {
-            aTileRef.removeClass("selected unsolved").addClass("solved");
-            bTileRef.removeClass("selected unsolved").addClass("solved");
-            this.aSelection = undefined;
-            this.bSelection = undefined;
-        } else {
-        /*Missmatch*/
-            aTileRef.removeClass("selected");
-            bTileRef.removeClass("selected");
-            this.aSelection = undefined;
-            this.bSelection = undefined;
-        }
-        this.checkWinLose();
     },
 
     showTile: function(tileToShow, tileContent) {
-        console.log(tileContent);
-        console.log(tileToShow);
         tileToShow.css("background-image", `url(assets/images/tiles/${tileContent}.jpg)`)
-        return
+    },
+
+    hideTile: function(tileToHide, tileContent) {
+        tileToHide.css("background-image", "");
+    },
+
+    compareTiles: function(self, aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
+        /*Hide Content of tile ready for comparison*/
+        self.hideTile(aTileRef);
+        self.hideTile(bTileRef);
+        /*Match marks tile solved, a solved tile cannot be reselected*/
+        if (self.boardArray[aRow][aCol] === self.boardArray[bRow][bCol]) {
+            aTileRef.removeClass("selected unsolved").addClass("solved");
+            bTileRef.removeClass("selected unsolved").addClass("solved");
+            self.aSelection = undefined;
+            self.bSelection = undefined;
+        } else {
+        /*Missmatch deselect tiles and clear a and b selection variables*/
+            aTileRef.removeClass("selected");
+            bTileRef.removeClass("selected");
+            self.aSelection = undefined;
+            self.bSelection = undefined;
+        }
+        self.checkWinLose();
     },
 
     selectTile: function(r, c) {
         let currentTile = $(`.row-${r} > .col-${c}`);
+        let self = this;
 
-        if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
-            currentTile.addClass("selected");
-            /*Select & store tile 1 ref*/
-            if (this.aSelection === undefined) {
-                this.aSelection = [r,c,currentTile];
-                this.showTile(currentTile, this.boardArray[r][c]);
-            } else {
-                /*Select & store tile 2 ref then compare tiles*/
-                this.bSelection = [r,c,currentTile];
-                this.showTile(currentTile, this.boardArray[r][c]);
-                this.compareTiles(this.aSelection[0], this.aSelection[1], this.aSelection[2], this.bSelection[0], this.bSelection[1], this.bSelection[2]);
+        /*If and selection is undefined allow selection to run*/
+        if (this.aSelection === undefined || this.bSelection === undefined) {
+            if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
+                currentTile.addClass("selected");
+                /*Select & store tile 1 ref*/
+                if (this.aSelection === undefined) {
+                    this.aSelection = [r,c,currentTile];
+                    this.showTile(currentTile, this.boardArray[r][c]);
+                } else {
+                    /*Select & store tile 2 ref then compare tiles*/
+                    this.bSelection = [r,c,currentTile];
+                    this.showTile(currentTile, this.boardArray[r][c]);
+                    /*Send tiles to be compared*/
+                    setTimeout(function() {
+                        self.compareTiles(self, self.aSelection[0], self.aSelection[1], self.aSelection[2], self.bSelection[0], self.bSelection[1], self.bSelection[2]);
+                    }, self.revealDuration);
+                }
             }
         }
     }
