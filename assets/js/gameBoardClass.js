@@ -6,6 +6,7 @@ let gameBoard = {
     bSelection: undefined,
     revealDuration: 1000,
     timeLeft: 60,
+    timer: undefined,
 
     initialize: function(r, c) {
         this.rows = r
@@ -39,6 +40,7 @@ let gameBoard = {
         $(".board-container").append(`<table class="game-board"></table>`)
         $(".score-container").append(`<h2>Time Left</h2><h3 id="Timer">60</h3>`)
         let gameBoard = $(".game-board");
+        let self = this;
 
         /*Create Grid and assign row and column numbers to each*/
         for (let r = 0; r < this.rows; r++) {
@@ -55,24 +57,29 @@ let gameBoard = {
         $(".game-board").css("width", "100%");
 
         /*Start Timer*/
-        this.countdownTimer();
+        this.timer = setInterval(this.countdownTimer, 1000, self);
     },
 
-    countdownTimer: function() {
-        setInterval(function() {
-            if (this.timeLeft >= 0) {
-                this.timeLeft --;
-                $("#Timer").text(this.timeLeft);
-                console.log(timeLeft);
-                clearInterval(setInterval);
-            }
-        }, 1000)
+    countdownTimer: function(self) {
+        self.timeLeft = self.timeLeft -1;
+        $("#Timer").text(self.timeLeft);
+        /*Lose state*/
+        if (self.timeLeft == 0) {
+            clearInterval(self.timer);
+            $(".score-container").empty();
+            $(".board-container").empty();
+            $(".score-container").append(`<h2>Sorry you Lose!!!</h2><p>Try again</p><a href="index.html">Main Menu</a>`);
+        }
+        
     },
 
-    checkWinLose: function() {
+    checkWin: function() {
         let unsolvedTiles = $(".game-board").find(".unsolved").length;
+        /*Win State*/
         if (unsolvedTiles === 0) {
-            $(".score-container").append(`<h2>Winner!!!</h2><a href="index.html">Main Menu</a>`);
+            $(".score-container").empty();
+            $(".score-container").append(`<h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a>`);
+            clearInterval(this.timer);
         }
     },
 
@@ -101,7 +108,7 @@ let gameBoard = {
             self.aSelection = undefined;
             self.bSelection = undefined;
         }
-        self.checkWinLose();
+        self.checkWin();
     },
 
     selectTile: function(r, c) {
