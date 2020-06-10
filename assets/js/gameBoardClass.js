@@ -5,13 +5,14 @@ let gameBoard = {
     aSelection: undefined,
     bSelection: undefined,
     revealDuration: 1000,
-    timeLeft: 5,
+    timeLeft: undefined,
     timer: undefined,
     winPossible: true,
 
-    initialize: function(r, c) {
+    initialize: function(r, c, time) {
         this.rows = r
         this.cols = c
+        this.timeLeft = time;
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
 
@@ -38,8 +39,8 @@ let gameBoard = {
         /*Empty play area and create a new blank table*/
         $(".board-container").empty();
         $(".score-container").empty();
-        $(".board-container").append(`<table class="game-board"></table>`)
-        $(".score-container").append(`<h2>Time Left</h2><h3 id="Timer">${this.timeLeft}</h3>`)
+        $(".board-container").append(`<table class="game-board"></table>`);
+        $(".score-container").append(`<h2>Time Left</h2><h3><span id="Timer">${this.timeLeft}</span><span> seconds</span></h3>`);
         let gameBoard = $(".game-board");
         let self = this;
 
@@ -62,17 +63,16 @@ let gameBoard = {
     },
 
     countdownTimer: function(self) {
-        self.timeLeft = self.timeLeft -1;
-        $("#Timer").text(self.timeLeft);
         /*Lose state*/
         if (self.timeLeft == 0) {
             self.winPossible = false;
             clearInterval(self.timer);
             $(".score-container").empty();
             $(".board-container").empty();
-            $(".score-container").append(`<h2>Sorry you Lose!!!</h2><p>Try again</p><a href="index.html">Main Menu</a>`);
+            $(".score-container").append(`<h2>Sorry you Lose!!!</h2><a href="index.html">Try Again</a>`);
         }
-        
+        self.timeLeft = self.timeLeft -1;
+        $("#Timer").text(self.timeLeft);
     },
 
     checkWin: function() {
