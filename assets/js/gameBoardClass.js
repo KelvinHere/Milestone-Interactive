@@ -53,11 +53,6 @@ let gameBoard = {
             $(gameBoard).append(`</tr>`);
         }
 
-        /*Size cells to fill thier container*/
-        calculatedCellHeight = 100 / this.rows;
-        $(".game-board td").css("height", calculatedCellHeight);
-        $(".game-board").css("width", "100%");
-
         /*Start Timer*/
         this.timer = setInterval(this.countdownTimer, 1000, self);
     },
