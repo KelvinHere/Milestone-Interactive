@@ -3,24 +3,29 @@
     padding: 0;
 }
 
-.page-wrapper {
+.page-grid {
     height: 100vh;
     display: grid;
     grid-template-rows: 2fr 20fr 1fr;
 }
 
+/*------------------------------------------------------Header*/
 header {
     background: red;
+    display: grid;
 }
 
-footer {
-    background: green;
+h1 {
+    justify-self: center;
+    align-self: center;
 }
 
+/*------------------------------------------------------Game board*/
 .game-container {
     background: orange;
     display: grid;
-    grid-template-columns: 8fr 2fr;
+    /* grid-template-columns: 8fr 2fr;*/
+    grid-auto-rows: 8fr 2fr;
 }
 
 .game-board {
@@ -46,4 +51,16 @@ td {
 
 .solved {
     background: url('../images/tick.jpg') center no-repeat;
+}
+
+/*------------------------------------------------------Footer*/
+footer {
+    background: green;
+}
+
+/*------------------------------------------------------Media Query*/
+@media(min-width: 512px) {
+    .game-container {
+        grid-template-columns: 8fr 2fr;
+    }
 }
