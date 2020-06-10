@@ -15,13 +15,15 @@
             <div class="board-container">
                 <h2>Welcome to pairs</h2>
                 <p>Match as many tiles as you can before your time is up!</p>
+                <br>
+                <p>Select a difficulty <span id="buttons-below">below</span><span id="buttons-right">to the right</span></p>
             </div>
             <div class="score-container">
                 <div class="button-container">
                     <div class="button-group">
-                        <button onclick="gameBoard.initialize(2,2,10)">2x2 grid</button>
-                        <button onclick="gameBoard.initialize(4,4,45)">4x4 grid</button>
-                        <button onclick="gameBoard.initialize(6,6,90)">6x6 grid</button>
+                        <button onclick="gameBoard.initialize(2,2,10)"><p>Easy</p><br><p>2x2</p></button>
+                        <button onclick="gameBoard.initialize(4,4,45)"><p>Medium</p><br><p>4x4</p></button>
+                        <button onclick="gameBoard.initialize(6,6,90)"><p>Hard</p><br><p>6x6</p></button>
                     </div>
                 </div>
             </div>

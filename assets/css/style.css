@@ -86,6 +86,11 @@ td {
     background: url('../images/tick.jpg') center no-repeat;
 }
 
+/*------------------------------------------------------Score Board*/
+#buttons-right {
+        display: none;
+    }
+
 /*------------------------------------------------------Footer*/
 footer {
     background: green;
@@ -102,7 +107,16 @@ footer {
     }
 
     .button-group {
+        height: 33%;
         grid-template-columns: none;
         grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    #buttons-right {
+        display: inline-block;
+    }
+
+    #buttons-below {
+        display: none;
     }
 }
