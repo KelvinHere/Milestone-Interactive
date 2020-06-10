@@ -36,7 +36,7 @@ let gameBoard = {
     },
 
     createHTMLGrid: function() {
-        /*Empty play area and create a new blank table*/
+        /*Empty play area and create a new blank table and set up timer text*/
         $(".board-container").empty();
         $(".score-container").empty();
         $(".board-container").append(`<table class="game-board"></table>`);

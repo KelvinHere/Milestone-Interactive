@@ -59,12 +59,14 @@ h1 a {
 
 .tile {
     border: none;
-    background: url('../images/question.jpg') center no-repeat;
+    background-image: url('../images/question.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .solved {
-    background: url('../images/tick.jpg') center no-repeat;
+    background-image: url('../images/tick.jpg');
 }
 
 /*------------------------------------------------------Buttons*/
@@ -101,7 +103,7 @@ footer {
     }
 
     .game-container {
-        grid-template-columns: 8fr 2fr;
+        grid-template-columns: 7fr 3fr;
     }
 
     .button-group {
