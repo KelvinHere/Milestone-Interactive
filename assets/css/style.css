@@ -18,14 +18,21 @@ header {
 h1 {
     justify-self: center;
     align-self: center;
+    font-size: 30px;
+    font-size: 6vw;
 }
 
 /*------------------------------------------------------Game board*/
 .game-container {
     background: orange;
     display: grid;
-    /* grid-template-columns: 8fr 2fr;*/
     grid-auto-rows: 8fr 2fr;
+}
+
+.board-container h2,
+.board-container p {
+    padding-top: 10%;
+    text-align: center;
 }
 
 .game-board {
@@ -36,6 +43,24 @@ h1 {
 
 .score-container {
     background: yellow;
+    text-align: center;
+}
+
+.button-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+.button-group {
+    height: 80%;
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    background-color: pink;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2%;
 }
 
 td {
@@ -60,7 +85,16 @@ footer {
 
 /*------------------------------------------------------Media Query*/
 @media(min-width: 512px) {
+    h1 {
+        font-size: 36px;
+    }
+
     .game-container {
         grid-template-columns: 8fr 2fr;
+    }
+
+    .button-group {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 }
