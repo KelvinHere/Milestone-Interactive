@@ -44,6 +44,14 @@ h1 {
 .score-container {
     background: yellow;
     text-align: center;
+    display: grid;
+}
+
+.score-container .timer-container,
+.score-container .score-text {
+    align-self: center;
+    justify-self: center;
+    height: auto;
 }
 
 .button-container {

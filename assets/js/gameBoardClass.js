@@ -40,7 +40,7 @@ let gameBoard = {
         $(".board-container").empty();
         $(".score-container").empty();
         $(".board-container").append(`<table class="game-board"></table>`);
-        $(".score-container").append(`<h2>Time Left</h2><h3><span id="Timer">${this.timeLeft}</span><span> seconds</span></h3>`);
+        $(".score-container").append(`<div class="timer-container"><h2>Time Left</h2><h3><span id="Timer">${this.timeLeft}</span><span> seconds</span></h3></div>`);
         let gameBoard = $(".game-board");
         let self = this;
 
@@ -67,9 +67,9 @@ let gameBoard = {
         if (self.timeLeft == 0) {
             self.winPossible = false;
             clearInterval(self.timer);
-            $(".score-container").empty();
             $(".board-container").empty();
-            $(".score-container").append(`<h2>Sorry you Lose!!!</h2><a href="index.html">Try Again</a>`);
+            $(".score-container").empty();
+            $(".score-container").append(`<div class="score-text"><h2>Sorry you Lose!!!</h2><a href="index.html">Try Again</a></div>`);
         }
         self.timeLeft = self.timeLeft -1;
         $("#Timer").text(self.timeLeft);
@@ -80,7 +80,7 @@ let gameBoard = {
         /*Win State*/
         if (unsolvedTiles === 0 && this.winPossible === true) {
             $(".score-container").empty();
-            $(".score-container").append(`<h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a>`);
+            $(".score-container").append(`<div class="score-text"><h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a></div>`);
             clearInterval(this.timer);
         }
     },
