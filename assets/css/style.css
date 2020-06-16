@@ -34,7 +34,7 @@ h1 a {
 .game-container {
     background: #474b4f;
     display: grid;
-    grid-auto-rows: 8fr 2fr;
+    grid-auto-rows: 4fr 1fr;
 }
 
 .board-container h2 {
@@ -79,6 +79,24 @@ h1 a {
     align-self: center;
     justify-self: center;
     height: auto;
+    color: #86c232;
+    font-size: 4vh;
+    text-decoration: none;
+}
+
+.score-text p {
+    font-size: 3vh;
+    padding-bottom: 3vh;
+}
+
+.score-text a {
+    text-decoration: none;
+    padding: 5%;
+    color: #222629;
+    background-color: #61892f;
+    font-size: 4vh;
+    border-radius: 20px;
+    font-weight: 700;
 }
 
 .tile {
@@ -147,10 +165,17 @@ h1 a {
 /*------------------------------------------------------Footer*/
 footer {
     background: #61892f;
+    display: grid;
+}
+
+footer p {
+    justify-self: center;
+    align-self: center;
+    font-size: 2vw;
 }
 
 /*------------------------------------------------------Media Query*/
-@media(min-width: 992px) {
+@media screen and (orientation:landscape), (min-width: 992px) {
     h1 {
         font-size: 36px;
     }
@@ -168,6 +193,7 @@ footer {
         height: 33%;
         grid-template-columns: none;
         grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10%;
     }
 
     #buttons-right {

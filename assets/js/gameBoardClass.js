@@ -68,7 +68,7 @@ let gameBoard = {
             clearInterval(self.timer);
             $(".board-container").empty();
             $(".score-container").empty();
-            $(".score-container").append(`<div class="score-text"><h2>Sorry you Lose!!!</h2><a href="index.html">Try Again</a></div>`);
+            $(".score-container").append(`<div class="score-text"><h2>Sorry you Lose!!!</h2><a class="main-menu-link" href="index.html">Try Again</a></div>`);
         }
         self.timeLeft = self.timeLeft -1;
         $("#Timer").text(self.timeLeft);
@@ -80,7 +80,7 @@ let gameBoard = {
         if (unsolvedTiles === 0 && this.winPossible === true) {
             this.winAudio.play();
             $(".score-container").empty();
-            $(".score-container").append(`<div class="score-text"><h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a></div>`);
+            $(".score-container").append(`<div class="score-text"><h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a class="main-menu-link" href="index.html">Main Menu</a></div>`);
             clearInterval(this.timer);
         }
     },
