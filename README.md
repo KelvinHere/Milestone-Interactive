@@ -41,6 +41,10 @@ This websites purpose is to provide a fun challenging game that can scale in dif
 
 ### Media
 
+- SFX Incorrect sound - Sonniss GDC-2016 Game Ausio Bundle - Noise Reactions - (SFX-ARCADIA_Error03 - renamed incorrect.wav)
+- SFX Correct selection and Win sounds - Gammemaster Audio - Pro Sound Collection v1.3 Collectibles_items_Powerup (happy_collect_item 1/2/3/10 .wav - renamed to correct 1/2/3 and win respectivley)
+
+
 ### Acknowledgements
 
 * [w3schools](https://www.w3schools.com/) - For documentation on scope

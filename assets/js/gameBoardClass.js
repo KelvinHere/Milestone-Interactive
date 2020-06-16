@@ -8,6 +8,9 @@ let gameBoard = {
     timeLeft: undefined,
     timer: undefined,
     winPossible: true,
+    incorrectAudio: new Audio('assets/audio/incorrect.mp3'),
+    correctOneAudio: new Audio('assets/audio/correct-1.mp3'),
+    winAudio: new Audio('assets/audio/win.mp3'),
 
     initialize: function(r, c, time) {
         this.rows = r
@@ -75,6 +78,7 @@ let gameBoard = {
         let unsolvedTiles = $(".game-board").find(".unsolved").length;
         // Win State
         if (unsolvedTiles === 0 && this.winPossible === true) {
+            this.winAudio.play();
             $(".score-container").empty();
             $(".score-container").append(`<div class="score-text"><h2>Winner!!!</h2><p>You won with ${this.timeLeft} seconds to spare!</p><a href="index.html">Main Menu</a></div>`);
             clearInterval(this.timer);
@@ -102,12 +106,14 @@ let gameBoard = {
             bTileRef.removeClass("selected unsolved").addClass("solved");
             self.aSelection = undefined;
             self.bSelection = undefined;
+            this.correctOneAudio.play();
         } else {
         // Missmatch deselect tiles and clear a and b selection variables
             aTileRef.removeClass("selected");
             bTileRef.removeClass("selected");
             self.aSelection = undefined;
             self.bSelection = undefined;
+            this.incorrectAudio.play();
         }
         self.checkWin();
     },
