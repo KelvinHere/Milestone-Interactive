@@ -177,6 +177,14 @@ footer p {
     font-size: 2vw;
 }
 
+/*------------------------------------------------------Preload*/
+.preload-tiles {
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+}
+
 /*------------------------------------------------------Media Query*/
 @media screen and (orientation:landscape), (min-width: 992px) {
     h1 {
@@ -223,28 +231,3 @@ footer p {
         width: 50%;
     }
 }
-
-/*------------------------------------------------------Preload*/
-/*.preload-tiles {
-    display: none;
-    background-image: url('../images/tiles/question.jpg');
-    background-image: url('../images/tiles/tick.jpg');
-    background-image: url('../images/tiles/0.jpg');
-    background-image: url('../images/tiles/1.jpg');
-    background-image: url('../images/tiles/2.jpg');
-    background-image: url('../images/tiles/3.jpg');
-    background-image: url('../images/tiles/4.jpg');
-    background-image: url('../images/tiles/5.jpg');
-    background-image: url('../images/tiles/6.jpg');
-    background-image: url('../images/tiles/7.jpg');
-    background-image: url('../images/tiles/8.jpg');
-    background-image: url('../images/tiles/9.jpg');
-    background-image: url('../images/tiles/10.jpg');
-    background-image: url('../images/tiles/11.jpg');
-    background-image: url('../images/tiles/12.jpg');
-    background-image: url('../images/tiles/13.jpg');
-    background-image: url('../images/tiles/14.jpg');
-    background-image: url('../images/tiles/15.jpg');
-    background-image: url('../images/tiles/16.jpg');
-    background-image: url('../images/tiles/17.jpg');
-}*/
