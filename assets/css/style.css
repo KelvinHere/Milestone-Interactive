@@ -15,6 +15,7 @@ body {
 
 /*------------------------------------------------------Header*/
 header {
+    /*background: blue;*/
     background: #61892f;
     display: grid;
 }
@@ -34,7 +35,7 @@ h1 a {
 .game-container {
     background: #474b4f;
     display: grid;
-    grid-auto-rows: 4fr 1fr;
+    grid-auto-rows: 2fr 1fr;
 }
 
 .board-container h2 {
@@ -65,7 +66,9 @@ h1 a {
 
 .game-board {
     width: 100%;
-    height: 95vw;
+    max-width: 100vh;
+    height: 100vw;
+    max-height: calc(100vh * 0.60);
 }
 
 .score-container {
@@ -129,7 +132,7 @@ h1 a {
 }
 
 .button-group {
-    height: 80%;
+    height: 50%;
     width: 90%;
     align-self: center;
     justify-self: center;
@@ -187,6 +190,7 @@ footer p {
     .game-board {
         height: calc(100vw * 0.66);
         max-height: 90vh;
+        width: 100%
     }
 
     .button-group {

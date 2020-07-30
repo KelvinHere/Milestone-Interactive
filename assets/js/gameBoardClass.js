@@ -34,7 +34,7 @@ let gameBoard = {
                 this.boardArray[r].push(pairs[randomElement]);
                 pairs.splice(randomElement, 1);
             }
-            console.log(this.boardArray[r]);
+            //uncomment to show place on board in console - console.log(this.boardArray[r]);
         }
         this.createHTMLGrid();
     },
@@ -68,7 +68,7 @@ let gameBoard = {
             clearInterval(self.timer);
             $(".board-container").empty();
             $(".score-container").empty();
-            $(".score-container").append(`<div class="score-text"><h2>Sorry you Lose!!!</h2><a class="main-menu-link" href="index.html">Try Again</a></div>`);
+            $(".score-container").append(`<div class="score-text"><h2>Sorry you Lose!!!</h2><br><a class="main-menu-link" href="index.html">Try Again</a></div>`);
         }
         self.timeLeft = self.timeLeft -1;
         $("#Timer").text(self.timeLeft);
