@@ -45,5 +45,4 @@ describe('Difficulty Settings', function() {
             expect(gameBoard.cols).toBe(6);
         });
     });
-
 });

@@ -132,7 +132,7 @@ let gameBoard = {
         let currentTile = $(`.row-${r} > .col-${c}`);
         let self = this;
 
-        // If and selection is undefined allow selection to run
+        // Allow selection to be made if two tiles are not already selected
         if (this.aSelection === undefined || this.bSelection === undefined) {
             if (currentTile.hasClass("unsolved") && !currentTile.hasClass("selected")) {
                 currentTile.addClass("selected");
