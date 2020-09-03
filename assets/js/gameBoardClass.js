@@ -11,11 +11,21 @@ let gameBoard = {
     incorrectAudio: new Audio('assets/audio/incorrect.mp3'),
     correctOneAudio: new Audio('assets/audio/correct-1.mp3'),
     winAudio: new Audio('assets/audio/win.mp3'),
-
-    initialize: function(r, c, time) {
-        this.rows = r
-        this.cols = c
-        this.timeLeft = time;
+    
+    initialize: function(difficulty) { 
+        if(difficulty == "easy"){
+            this.rows = 2
+            this.cols = 2
+            this.timeLeft = 10;
+        } else if(difficulty == "medium") {
+            this.rows = 4
+            this.cols = 4
+            this.timeLeft = 45;
+        } else {
+            this.rows = 6
+            this.cols = 6
+            this.timeLeft = 90;
+        }
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
         let images = [];
