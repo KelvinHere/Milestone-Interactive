@@ -34,7 +34,7 @@ let gameBoard = {
                 this.boardArray[r].push(pairs[randomElement]);
                 pairs.splice(randomElement, 1);
             }
-            //uncomment to show place on board in console - console.log(this.boardArray[r]);
+            //REMOVE BEFORE SUBMITTING uncomment to show place on board in console - console.log(this.boardArray[r]);
         }
         this.createHTMLGrid();
     },
