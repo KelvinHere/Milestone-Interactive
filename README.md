@@ -1,4 +1,4 @@
-  <h1 style="text-align: center;">Pairs Game - Interactive FrontEnd</h1>
+<h1 style="text-align: center;">Pairs Game - Interactive FrontEnd</h1>
 
 Pairs - The Matching Memory Game:
 
@@ -14,7 +14,31 @@ You are presented with a board of tiles.  The aim is to select each pair of matc
     * [**Gameplay Rules & Player Experience**](#gameplay-rules-and-player-experience)
     * [**Wireframe Designs**](#wireframe-designs)
     * [**User Stories**](#user-stories)
+    * [**Developer and Business Purpose**](#developer-and-business-purpose)
     * [**Design Choices**](#design-choices)    
+        * [*Colours and Fonts*](#colours-and-fonts)
+        * [*Image Choices*](#image-choices)
+        * [*Sound Choices*](#sound-choices)
+        * [*Winning and Losing*](#winning-and-losing)
+        * [*Other Design Choices*](#other-design-choices)
+    
+2. [**Features**](#features)
+    * [*Existing Features*](#existing-features)
+    * [*Future Features*](#future-features)
+        * [*Near Future*](#near-future)
+        * [*Far Future*](#far-future)
+        
+3. * [**Changes in Development**](#changes-in-development)
+4. * [**Testing**](#testing) 
+5. * [**Technologies Used**](#technologies-used) 
+6. * [**Deployment**](#deployment) 
+7. * [**Technologies Used**](#technologies-used) 
+8. * [**Credits**](#credits) 
+        * [**Content**](#content) 
+        * [**Media**](#media) 
+        * [**Acknowledgements**](#acknowledgements)
+    
+   
 
     
 
@@ -54,6 +78,15 @@ As a user I want
 7. The tiles to be distinctly different from each other so I don’t feel cheated.
 8. The game to run on whatever device or screen size I decide to use.
 
+#### Developer and Business Purpose
+
+Each feature must be well programmed, function properly and be bug free to display a professional use of the programming language and test suite.
+
+Defensive programming must be used to avoid users compromising the game loop or confusing the game with rapid input.
+
+Business purpose is to engage the user and give incentive to stay and play the game, higher engagement and time spent could give oppertunity for mid game or banner advertisements in the future.
+
+This milestone project will show an understanding of Javascript,  jQuery, jasmine, HTML, CSS, the DOM and how they all interact to form a final product.
 
 #### Design Choices
 
@@ -67,11 +100,11 @@ The grey middle sections are designed to be as mute as possible so when the game
 
 PT Sans Narrow was chosen as the font as it is soft, easy to read and not a particularly serious font.
 
-##### Images
+##### Image Choices
 
 Cartoon animal pictures were used as the objects to pair as they appeal to younger players while also having enough variation for the more complex difficulty levels.  Inanimate objects and simple geometric shapes were too boring, and real pictures were harder to quickly differentiate.
 
-##### Sounds
+##### Sound Choices
 
 A positive (bright) sound effect is used when the user pairs two cards.
 
@@ -79,26 +112,18 @@ The negative (dull) sound effect for a fail was intentionally quieter and less p
 
 The win jingle is in the same style as the positive sound effect used for card matching, signifying more than just a single match has been made.
 
-##### Winning
+##### Winning and Losing
 
 On winning the game you are left with a board of bright ticks, a win jingle plays, you are told “You Win” and shown how many seconds you had to spare to encourage replay.  This barrage of positive feedback leaves the user in no doubt they have accomplished something.
 On losing, the game board is removed, you are informed of your loss and a button to “Try Again” is displayed to encourage you to try again.
 
-##### Other
+##### Other Design Choices
+
+The games difficulty can be changed to include a good experience for everyone
 
 The website's main title is a link back to choose a difficulty, so if the player thinks the game is too hard, simply clicking back on the name of the game will drop the player back to the main game selection screen.
 
 The game is designed to adapt to device and screen size, the layout can change from horizontal to vertical to give the user the most screen space to display the tiles.
-
-#### Developer and Business Purpose
-
-Each feature must be well programmed, function properly and be bug free to display a professional use of the programming language and test suite.
-
-Defensive programming must be used to avoid users compromising the game loop or confusing the game with rapid input.
-
-Business purpose is to engage the user and give incentive to stay and play the game, higher engagement and time spent could give oppertunity for mid game or banner advertisements in the future.
-
-This milestone project will show an understanding of Javascript,  jQuery, jasmine, HTML, CSS, the DOM and how they all interact to form a final product.
 
 ## Features
 
@@ -128,12 +153,6 @@ This milestone project will show an understanding of Javascript,  jQuery, jasmin
 
 - All card images are downloaded when first coming to the website to avoid loading problems when playing (some cards would only appear after a few seconds when selected).  This was solved by loading them into the footer with a zero height and width.
 
-### Changes in development 
-
-- Originally the game was score based and the aim was to complete the grid in as few attempts as possible.  You could cheat this easily by drawing the game board on paper.  The game was then adapted to a simple win/loss with a timer, showing you how much time you had to spare if you won.  This made the game much more frantic and fun at higher difficulty levels.
-
-- Layout was changed from the wireframe designs above to look more modern.  By removing the win/loss modals and splitting the play area to have a dedicated area for the timer, win/loss, retry button the experience felt more consistent and familiar.  This also lead to a more consistent experience on mobile with the more varied screen sizes. 
-
 ### Future Features
 
 ##### Near Future
@@ -144,6 +163,12 @@ This milestone project will show an understanding of Javascript,  jQuery, jasmin
 ##### Far Future
 
 * An online scoreboard with profanity filtered username input
+
+### Changes in Development 
+
+- Originally the game was score based and the aim was to complete the grid in as few attempts as possible.  You could cheat this easily by drawing the game board on paper.  The game was then adapted to a simple win/loss with a timer, showing you how much time you had to spare if you won.  This made the game much more frantic and fun at higher difficulty levels.
+
+- Layout was changed from the wireframe designs above to look more modern.  By removing the win/loss modals and splitting the play area to have a dedicated area for the timer, win/loss, retry button the experience felt more consistent and familiar.  This also lead to a more consistent experience on mobile with the more varied screen sizes. 
 
 ## Testing
 
@@ -202,9 +227,9 @@ More information or changes in the cloning procedure HERE https://github.com/git
 
 ## Credits
  
-- Created by KelvinHere
-
 ### Content
+
+- Created by KelvinHere
 
 - Contents of this website created by KelvinHere
 
