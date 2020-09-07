@@ -14,21 +14,20 @@ let gameBoard = {
     
     initialize: function(difficulty) { 
         if(difficulty == "easy"){
-            this.rows = 2
-            this.cols = 2
+            this.rows = 2;
+            this.cols = 2;
             this.timeLeft = 10;
         } else if(difficulty == "medium") {
-            this.rows = 4
-            this.cols = 4
+            this.rows = 4;
+            this.cols = 4;
             this.timeLeft = 45;
         } else {
-            this.rows = 6
-            this.cols = 6
+            this.rows = 6;
+            this.cols = 6;
             this.timeLeft = 90;
         }
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
-        let images = [];
 
         // create list of pairs in array
         for (let tileID = 0; tileID < pairsNeeded; tileID++) {
@@ -152,5 +151,5 @@ let gameBoard = {
             }
         }
     }
-}
+};
 
