@@ -45,8 +45,16 @@ describe('Difficulty Settings', function() {
             expect(gameBoard.cols).toBe(6);
         });
     });
-});
 
+    describe('Tile Selection Variables', function() {
+        it('selectionA should be (1,1)', function() {
+            gameBoard.selectTile(1,1);
+            expect(gameBoard.selectionA).toBe(2);
+
+        });
+    });
+});
+/*
 describe('jQuery tests', function() {
 
     beforeEach(function () {
@@ -72,4 +80,5 @@ describe('jQuery tests', function() {
             </section>
         `);
     });
-});
+    
+});*/
