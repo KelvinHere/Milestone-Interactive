@@ -1,14 +1,5 @@
 describe('Difficulty Settings', function() {
 
-    beforeEach(function () {
-        setFixtures(`
-            <section class="game-container">
-                <div class="board-container"><table class="game-board"><tr class="row-0"><td class="col-0 tile unsolved" onclick="gameBoard.selectTile(0,0)"></td><td class="col-1 tile unsolved" onclick="gameBoard.selectTile(0,1)"></td></tr><tr class="row-1"><td class="col-0 tile unsolved" onclick="gameBoard.selectTile(1,0)"></td><td class="col-1 tile unsolved" onclick="gameBoard.selectTile(1,1)"></td></tr></table></div>
-                <div class="score-container"><div class="timer-container"><h2>Time Left</h2><h3><span id="Timer">0</span><span> seconds</span></h3></div></div>
-            </section>
-        `);
-    });
-
     describe('Time limits', function() {
         it('easy time limit should be 10 seconds', function() {
             gameBoard.initialize('easy');
@@ -54,14 +45,31 @@ describe('Difficulty Settings', function() {
             expect(gameBoard.cols).toBe(6);
         });
     });
+});
 
-    describe('Tile input test', function() {
-        it('tile selection', function() {
-            gameBoard.selectTile(1,1);
-            
-            alert(gameBoard.currentTile)
-            expect(gameBoard.currentTile).toBe(undefined);
-        });
+describe('jQuery tests', function() {
+
+    beforeEach(function () {
+        setFixtures(`
+            <section class="game-container">
+                <div class="board-container">
+                    <table class="game-board">
+                        <tr class="row-0">
+                            <td class="col-0 tile unsolved" onclick="gameBoard.selectTile(0,0)"></td>
+                            <td class="col-1 tile unsolved" onclick="gameBoard.selectTile(0,1)"></td>
+                        </tr><tr class="row-1">
+                            <td class="col-0 tile unsolved" onclick="gameBoard.selectTile(1,0)"></td>
+                            <td class="col-1 tile unsolved" onclick="gameBoard.selectTile(1,1)"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="score-container">
+                    <div class="timer-container">
+                        <h2>Time Left</h2>
+                        <h3><span id="Timer">0</span><span> seconds</span></h3>
+                    </div>
+                </div>
+            </section>
+        `);
     });
-
 });

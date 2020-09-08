@@ -247,5 +247,5 @@ Add this repository to your local workspace by :-
 ### Acknowledgements
 
 * [w3schools](https://www.w3schools.com/) - For documentation on scope
-* [matthewroach.me](http://matthewroach.me/basic-jquery-testing-with-jasmine-part-1/) - For documentation on jQuery-jasmine testing
+* [matthewroach.me](http://matthewroach.me/basic-jquery-testing-with-jasmine-part-1/) - For documentation on jasmine-jquery testing
 
