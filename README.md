@@ -21,13 +21,11 @@ You are presented with a board of tiles.  The aim is to select each pair of matc
         * [*Sound Choices*](#sound-choices)
         * [*Winning and Losing*](#winning-and-losing)
         * [*Other Design Choices*](#other-design-choices)
-    
 2. [**Features**](#features)
-    * [*Existing Features*](#existing-features)
-    * [*Future Features*](#future-features)
+    * [**Existing Features**](#existing-features)
+    * [**Future Features**](#future-features)
         * [*Near Future*](#near-future)
         * [*Far Future*](#far-future)
-        
 3. * [**Changes in Development**](#changes-in-development)
 4. * [**Testing**](#testing) 
 5. * [**Technologies Used**](#technologies-used) 
@@ -249,4 +247,5 @@ Add this repository to your local workspace by :-
 ### Acknowledgements
 
 * [w3schools](https://www.w3schools.com/) - For documentation on scope
+* [matthewroach.me](http://matthewroach.me/basic-jquery-testing-with-jasmine-part-1/) - For documentation on jQuery-jasmine testing
 

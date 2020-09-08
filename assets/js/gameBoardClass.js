@@ -1,3 +1,10 @@
+/*! Contains code for gameBoard object for the Pairs matching game
+* 
+* This object contains methods for the logic of the pairs memory game.
+* The object has to be initialized by passing one argument (easy, medium or hard) 
+* to the initialize method.
+*/
+
 let gameBoard = {
     rows: 0,
     cols: 0,
@@ -11,7 +18,8 @@ let gameBoard = {
     incorrectAudio: new Audio('assets/audio/incorrect.mp3'),
     correctOneAudio: new Audio('assets/audio/correct-1.mp3'),
     winAudio: new Audio('assets/audio/win.mp3'),
-    
+
+    //Sets bord size depending on difficulty and creates random positions for each tile
     initialize: function(difficulty) { 
         if(difficulty == "easy"){
             this.rows = 2;
@@ -26,6 +34,8 @@ let gameBoard = {
             this.cols = 6;
             this.timeLeft = 90;
         }
+
+        //How many pairs of tiles are needed
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
 
@@ -43,11 +53,11 @@ let gameBoard = {
                 this.boardArray[r].push(pairs[randomElement]);
                 pairs.splice(randomElement, 1);
             }
-            //REMOVE BEFORE SUBMITTING uncomment to show place on board in console - console.log(this.boardArray[r]);
-        }
+       }
         this.createHTMLGrid();
     },
 
+    // Creates the game board in HTML
     createHTMLGrid: function() {
         // Empty play area and create a new blank table and set up timer text
         $(".board-container").empty();
@@ -66,10 +76,11 @@ let gameBoard = {
             $(gameBoard).append(`</tr>`);
         }
 
-        // Start Timer
+        // Grid is created now Start the Timer
         this.timer = setInterval(this.countdownTimer, 1000, self);
     },
 
+    // Countdown timer, will activaite fail state when out of time
     countdownTimer: function(self) {
         // Lose state
         if (self.timeLeft == 0) {
@@ -83,6 +94,7 @@ let gameBoard = {
         $("#Timer").text(self.timeLeft);
     },
 
+    // Check if the player has won the game
     checkWin: function() {
         let unsolvedTiles = $(".game-board").find(".unsolved").length;
         // Win State
@@ -94,6 +106,7 @@ let gameBoard = {
         }
     },
 
+    // Flips to reveal a given tile
     showTile: function(tileToShow, tileContent) {
         tileToShow.addClass("tile-flip");
         setTimeout(function(){
@@ -101,10 +114,12 @@ let gameBoard = {
         }, 200);
     },
 
+    // Re-hides a given revealed tile
     hideTile: function(tileToHide, tileContent) {
         tileToHide.css("background-image", "").removeClass("tile-flip");
     },
 
+    //Compares two tiles
     compareTiles: function(self, aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
         // Hide Content of tile ready for comparison
         self.hideTile(aTileRef);
@@ -127,6 +142,7 @@ let gameBoard = {
         self.checkWin();
     },
 
+    // Selects a tile if allowed
     selectTile: function(r, c) {
         let currentTile = $(`.row-${r} > .col-${c}`);
         let self = this;

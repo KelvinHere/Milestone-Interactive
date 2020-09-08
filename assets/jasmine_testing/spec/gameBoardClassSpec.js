@@ -1,5 +1,14 @@
 describe('Difficulty Settings', function() {
 
+    beforeEach(function () {
+        setFixtures(`
+            <section class="game-container">
+                <div class="board-container"><table class="game-board"><tr class="row-0"><td class="col-0 tile unsolved" onclick="gameBoard.selectTile(0,0)"></td><td class="col-1 tile unsolved" onclick="gameBoard.selectTile(0,1)"></td></tr><tr class="row-1"><td class="col-0 tile unsolved" onclick="gameBoard.selectTile(1,0)"></td><td class="col-1 tile unsolved" onclick="gameBoard.selectTile(1,1)"></td></tr></table></div>
+                <div class="score-container"><div class="timer-container"><h2>Time Left</h2><h3><span id="Timer">0</span><span> seconds</span></h3></div></div>
+            </section>
+        `);
+    });
+
     describe('Time limits', function() {
         it('easy time limit should be 10 seconds', function() {
             gameBoard.initialize('easy');
@@ -28,21 +37,31 @@ describe('Difficulty Settings', function() {
             gameBoard.initialize('easy');
             expect(gameBoard.cols).toBe(2);
         });
-                it('easy grid should be 4 rows', function() {
+        it('medium grid should be 4 rows', function() {
             gameBoard.initialize('medium');
             expect(gameBoard.rows).toBe(4);
         });
-        it('easy grid should be 4 cols', function() {
+        it('medium grid should be 4 cols', function() {
             gameBoard.initialize('medium');
             expect(gameBoard.cols).toBe(4);
         });
-                it('easy grid should be 6 rows', function() {
+        it('hard grid should be 6 rows', function() {
             gameBoard.initialize('hard');
             expect(gameBoard.rows).toBe(6);
         });
-        it('easy grid should be 6 cols', function() {
+        it('hard grid should be 6 cols', function() {
             gameBoard.initialize('hard');
             expect(gameBoard.cols).toBe(6);
         });
     });
+
+    describe('Tile input test', function() {
+        it('tile selection', function() {
+            gameBoard.selectTile(1,1);
+            
+            alert(gameBoard.currentTile)
+            expect(gameBoard.currentTile).toBe(undefined);
+        });
+    });
+
 });
