@@ -181,8 +181,8 @@ footer p {
 .preload-tiles {
     position: absolute;
     z-index: 999;
-    top: 0px;
-    left: 0px;
+    top: 10px;
+    left: 10px;
 }
 
 /*------------------------------------------------------Media Query*/

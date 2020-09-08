@@ -20,7 +20,8 @@ let gameBoard = {
     winAudio: new Audio('assets/audio/win.mp3'),
 
     //Sets bord size depending on difficulty and creates random positions for each tile
-    initialize: function(difficulty) { 
+    initialize: function(difficulty) {
+        this.winPossible = true;
         if(difficulty == "easy"){
             this.rows = 2;
             this.cols = 2;

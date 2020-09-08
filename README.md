@@ -121,6 +121,8 @@ On losing, the game board is removed, you are informed of your loss and a button
 
 The games difficulty can be changed to allow a good experience for every skill level.
 
+The game board is only loaded when the user picks a difficulty and the timer starts immediatley to avoid cheating.
+
 The website's main title is a link back to choose a difficulty, so if the player thinks the game is too hard, simply clicking back on the name of the game will drop the player back to the main game selection screen where difficulty is selected.
 
 The game is designed to adapt to device and screen size, the layout can change from horizontal to vertical to give the user the most screen space to display the tiles.
@@ -172,6 +174,7 @@ The game is designed to adapt to device and screen size, the layout can change f
 
 ## Testing
 
+[Testing documentation in this link](https://github.com/KelvinHere/Milestone-Interactive/blob/master/testing.md)
 
 ## Technologies Used
  
