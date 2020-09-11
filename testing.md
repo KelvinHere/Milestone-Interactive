@@ -1,5 +1,7 @@
 # Pairs - Testing Methodology
 
+### Automated testing
+
 ## Validation Tools
 
 HTML and CSS Validation
