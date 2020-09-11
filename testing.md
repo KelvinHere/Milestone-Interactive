@@ -14,24 +14,25 @@ The project has been checked with the [W3C Markup Validation Service](https://va
 
 **Javascript**
 
-jsHint : Javasctipt in this project produces no warnings or errors when run through jsHint /*jshint esversion: 6 */
+[JSHint](https://jshint.com/) version 2.12.0 has been used to check code quality with the qualifier of `/*jshint esversion: 6*/` at the top of the code.  No problems or warnings are present in the code using JSLint and the qualifier mentioned.
+
+
 
 ## Jasmine Testing
 
-Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine by :-
+Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine through spec_runner.html which:-
 
-1. spec_runner.html loads :-
+1. Loads :-
     * The Jasmine framework
     * jQuery
     * The script to be tested [gameBoardClass.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/js/gameBoardClass.js)
     * The tests to be performed on the script [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js)
 
-2. The tests in [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js) are performed on the script
-3. The results are displayed in an eay to read format in the browser.
+2. Jasmine then uses [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js) to test against the target script.
 
-These automated tests can be performed on any update to the code with a single click so can save many hours of what would be manual testing.
+3. The results are displayed in an easy to read format in the browser.
 
-All jasmine tests were tested to purposley fail before any confidence was given to the correct result.
+These automated tests can be performed on any update to the code with a single click so can save many hours of what would be manual testing.  All jasmine tests were tested to purposley fail before any confidence was given to any in spec results.
 
 ### Run Jasmine Tests Live
 
@@ -96,6 +97,12 @@ The project was visually inspected, displayed and played without bugs or errors 
     - iPhone X
     - iPad / iPad Pro
 
+### User testing
+
+*  The project has been tested extensivley by friends and family with varied devices.
+
+* Watching users play the game allowed its rules to evolve to be more fun
+
 ## User Story Testing
 
 Users will want to :-
@@ -126,11 +133,11 @@ Users will want to :-
     - *Fix* : the images were loading, to prevent this the images are preloaded into the footer before the player selects difficulty at a 0x0 size.
 
 - The player could select more than two tiles.
-    - *Fix* : When selecting a tile, the `tileSelect` method will only run if 'selectionA' or 'selectionB' are undefined.
+    - *Fix* : When selecting a tile, the `tileSelect` method will only run if either of two variables 'selectionA' or 'selectionB' are undefined.
 
 ### Unsolved
 
-- None so far
+- None so far found
 
 
 

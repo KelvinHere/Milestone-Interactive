@@ -169,4 +169,3 @@ let gameBoard = {
         }
     }
 };
-

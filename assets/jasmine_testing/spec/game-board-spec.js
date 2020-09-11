@@ -1,3 +1,9 @@
+/*! Contains Jasmine Tests for gameBoardClass.js
+* 
+* This object contains methods for the logic of the pairs memory game.
+* The object has to be initialized by passing one argument (easy, medium or hard) 
+* to the initialize method.
+*/
 describe('Difficulty Settings', function() {
 
     describe('Time limits', function() {

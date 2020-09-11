@@ -92,6 +92,8 @@ This milestone project will show an understanding of Javascript,  jQuery, jasmin
 
 The website has a simple four colour design (two greens and two greys) for all text and backgrounds to avoid colour overload when playing the game.  All of the variation in colour is to be used within the cards of the game.
 
+All fonts are displayed on a contrasting background for easy readability.
+
 The green header and footer are designed to frame the middle section of the page where the game will be played
 
 The grey middle sections are designed to be as mute as possible so when the game starts there is little distraction or interference from the background as the user is choosing cards.
@@ -100,7 +102,9 @@ PT Sans Narrow was chosen as the font as it is soft, easy to read and not a part
 
 ##### Image Choices
 
-Cartoon animal pictures were used as the objects to pair as they appeal to younger players while also having enough variation for the more complex difficulty levels.  Inanimate objects and simple geometric shapes were too boring, and real pictures were harder to quickly differentiate.
+Cartoon animal pictures were used as the objects to pair as they appeal to younger players while also having enough variation for the more complex difficulty levels.  Animal pictures also allow anyone with colorblindness to still play the game as matching is still possible by shape only.
+
+Inanimate objects and simple geometric shapes were too boring, and real pictures were harder to quickly differentiate.
 
 ##### Sound Choices
 
@@ -125,6 +129,8 @@ The game board is only loaded when the user picks a difficulty and the timer sta
 The website's main title is a link back to choose a difficulty, so if the player thinks the game is too hard, simply clicking back on the name of the game will drop the player back to the main game selection screen where difficulty is selected.
 
 The game is designed to adapt to device and screen size, the layout can change from horizontal to vertical to give the user the most screen space to display the tiles.
+
+Navigation and selection are consistent in the project.
 
 ## Features
 
