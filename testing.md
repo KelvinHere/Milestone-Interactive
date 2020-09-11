@@ -1,17 +1,16 @@
 # Pairs - Testing Methodology
 
-### Automated testing
+## Automated testing
 
-## Validation Tools
+### Validation Tools
 
-HTML and CSS Validation
+**HTML and CSS Validation**
 
-The project has been checked with the HTML validator at validator.w3.org.
+The project has been checked with the [W3C Markup Validation Service](https://validator.w3.org/) and the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
 
-index.html test
+* [index.html test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F)
+* [style.css test](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-CSS direct input test - Copy CSS from style_no_variables.css - see note below
-Note - WC3 validator does not support the use of CSS variables example. --font-main-color: rgb(155,212,150); It will give a parse error when declared and a value error when used. Without the declared variables and references to them in the CSS it passes with no errors. Here is a link to the issue on W3C, all new reports on this issure are directed to this link. Here is the css used on the live site which includes variables -> style.css.
 
 The project has been spell checked with W3C Spell checker.
 
