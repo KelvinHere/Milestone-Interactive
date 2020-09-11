@@ -52,8 +52,8 @@ describe('Difficulty Settings', function() {
             expect(gameBoard.selectionA).toBe(2);
 
         });
-    });
-});*/
+    });*/
+});
 /*
 describe('jQuery tests', function() {
 
