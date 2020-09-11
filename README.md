@@ -6,7 +6,6 @@ You are presented with a board of tiles.  The aim is to select each pair of matc
 
 * [Pairs Game - Play Now](https://kelvinhere.github.io/Milestone-Interactive/ 'Pairs website GitHub pages link')
 * [This Repository](https://github.com/KelvinHere/Milestone-Interactive/ 'Gitpod repository link')
-* [Jasmine Testing](https://kelvinhere.github.io/Milestone-Interactive/assets/jasmine_testing/jasmine.html)
 
 ## Contents
 

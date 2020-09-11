@@ -46,14 +46,14 @@ describe('Difficulty Settings', function() {
         });
     });
 
-    describe('Tile Selection Variables', function() {
+ /*   describe('Tile Selection Variables', function() {
         it('selectionA should be (1,1)', function() {
             gameBoard.selectTile(1,1);
             expect(gameBoard.selectionA).toBe(2);
 
         });
     });
-});
+});*/
 /*
 describe('jQuery tests', function() {
 

@@ -6,27 +6,44 @@
 
 **HTML and CSS Validation**
 
-The project has been checked with the [W3C Markup Validation Service](https://validator.w3.org/) and the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
+The project has been checked with the [W3C Markup Validation Service](https://validator.w3.org/), the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) and the [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker).  Test links below.
 
-* [index.html test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F)
-* [style.css test](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [index.html markup test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F)
+* [index.html spell check](https://www.w3.org/2002/01/spellchecker?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&lang=en_US)
+* [style.css validation test](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
+**Javascript**
 
-The project has been spell checked with W3C Spell checker.
-
-
+jsHint : Javasctipt in this project produces no warnings or errors when run through jsHint /*jshint esversion: 6 */
 
 ## Jasmine Testing
 
-## Linters
+Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine by :-
 
-jsHint : Javasctipt in this project produces no warnings or errors when run through jsHint /*jshint esversion: 6 */
+1. spec_runner.html loads :-
+    * The Jasmine framework
+    * jQuery
+    * The script to be tested [gameBoardClass.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/js/gameBoardClass.js)
+    * The tests to be performed on the script [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js)
+
+2. The tests in [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js) are performed on the script
+3. The results are displayed in an eay to read format in the browser.
+
+These automated tests can be performed on any update to the code with a single click so can save many hours of what would be manual testing.
+
+All jasmine tests were tested to purposley fail before any confidence was given to the correct result.
+
+### Run Jasmine Tests Live
+
+The link below will run my jasmine tests and show the results.
+
+* [Jasmine Testing](https://kelvinhere.github.io/Milestone-Interactive/assets/jasmine_testing/spec_runner.html)
 
 ## Manual Testing
 
 Extensive manual testsing was done on this project to make sure the website and game work as expected.  Below is a list of tests carried out.
 
-### Regarding The game
+### Regarding the game
 
  All game modes have been completed to make sure :-
 - Each difficulty creates the correct sized grid
@@ -50,8 +67,7 @@ Extensive manual testsing was done on this project to make sure the website and 
 - There are enough tile pictures for each difficulty level
 - Each difficulty level is possible to be completed in the assigned time
     
-
-### Regarding the websites behaviour
+### Regarding website behaviour
 
 The website has been tested to :-
 - Make sure the game board scales to the maximum (sensible) size of its container
@@ -64,7 +80,6 @@ The website has been tested to :-
 - The instructions were visible and easy to reloads
 - All animations were smooth and free of graphical errors or incorrect z order
 - The header title and 'try again buttons take the player back to the difficulty settings
-
 
 ### Platform Testing
 
@@ -80,6 +95,26 @@ The project was visually inspected, displayed and played without bugs or errors 
     - iPhone 6/7/8 plus
     - iPhone X
     - iPad / iPad Pro
+
+## User Story Testing
+
+Users will want to :-
+1. To be playing the game as quickly as possible.
+    * A single click can start the game at any difficulty level, no sub menus or setup.
+2. To be given the instructions for the game as concisely as possible.
+    * Instructions are given in simple form on the first page.
+3. The game to give me suitable feedback for my inputs through sound or animation.
+    * Achievements and failures have sound effects, tiles flip when clicked for more feedback.
+4. Te be able to restart the game quickly.
+    * Clicking on the title brings the user back to difficulty selection.
+5. To be able to change the games difficulty to my skill level.
+    * Easy, Medium and Hard difficulties are available.
+6. To be given a challenge only if I want it.
+    * A win on easy is the same as a win on hard, the game is about personal challenge.
+7. The tiles to be distinctly different from each other.
+    * Cartoon animals are used as the images as they are easy to distinguisg, more so than pictures or random objects.
+8. The game to run on whatever device or screen size I decide to use.
+    * The game is optimised for mobile, tablet and desktop.
 
 ## Bugs
 
