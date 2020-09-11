@@ -136,7 +136,7 @@ h1 a {
     width: 90%;
     align-self: center;
     justify-self: center;
-    background-color: none;
+    background-color: transparent;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2%;
