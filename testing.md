@@ -16,8 +16,6 @@ The project has been checked with the [W3C Markup Validation Service](https://va
 
 [JSHint](https://jshint.com/) version 2.12.0 has been used to check code quality with the qualifier of `/*jshint esversion: 6*/` at the top of the code.  No problems or warnings are present in the code using JSLint and the qualifier mentioned.
 
-
-
 ## Jasmine Testing
 
 Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine through spec_runner.html which:-
@@ -34,11 +32,23 @@ Jasime is an open source JavaScript testing framework, it allows tests to be run
 
 These automated tests can be performed on any update to the code with a single click so can save many hours of what would be manual testing.  All jasmine tests were tested to purposley fail before any confidence was given to any in spec results.
 
+The tests in this project check 
+1. That variables for the games initialisation are correct depending on difficulty
+2. That the grid sizes are the correct size for the difficulty level.
+3. Any invalid input to the games 'tileSelect' method are caught and dont allow the code to carry on executing with invalid types or ranges.
+
 ### Run Jasmine Tests Live
 
 The link below will run my jasmine tests and show the results.
 
 * [Jasmine Testing](https://kelvinhere.github.io/Milestone-Interactive/assets/jasmine_testing/spec_runner.html)
+
+### Add and run your own Jasime tests
+
+* Follow deployment in this repos [README.md](https://github.com/KelvinHere/Milestone-Interactive/blob/master/README.md)
+* Add your test to game-board-spec.js located in assets/jasmine_testing/spec
+* Open spec_runner.html located in assets/jasmine_testing
+
 
 ## Manual Testing
 
@@ -46,7 +56,7 @@ Extensive manual testsing was done on this project to make sure the website and 
 
 ### Regarding the game
 
- All game modes have been completed to make sure :-
+ All game modes have been played to failure and completion to make sure :-
 - Each difficulty creates the correct sized grid
 - The tile positions are generated randomly each game
 - The different difficulties have the correct time limits
@@ -67,7 +77,10 @@ Extensive manual testsing was done on this project to make sure the website and 
 - The tile pictures appear without delay
 - There are enough tile pictures for each difficulty level
 - Each difficulty level is possible to be completed in the assigned time
-    
+- If a user tries to modify the difficulty setting to anything other than the standard settings, the game defaults to hard
+- If a user tries to modify the selectTile() method, it will catch invalid 'type' and out of range inputs.
+- The correct classes are added and removed from the game elements during gameplay
+
 ### Regarding website behaviour
 
 The website has been tested to :-
@@ -88,6 +101,7 @@ The project was visually inspected, displayed and played without bugs or errors 
 
 - Desktop - Variable resolutions from 2560 x 1440 to 800 x 600 - Also tested on Firefox/Edge/Opera
 - Redmi Note 4
+- Redme Lite 4A
 - also simulated on :-
     - Moto G4
     - Galaxy S5
@@ -134,6 +148,9 @@ Users will want to :-
 
 - The player could select more than two tiles.
     - *Fix* : When selecting a tile, the `tileSelect` method will only run if either of two variables 'selectionA' or 'selectionB' are undefined.
+
+- Invalid type input of variable `col` in gameBoard.selectTile() method did not return a warning and allowed code to continue to execute.
+    - *Fix* : Jasmine testing allowed this bug to be found, the error was traced to an if statement where one of the conditions variables was `r` row instead of `c` col.
 
 ### Unsolved
 

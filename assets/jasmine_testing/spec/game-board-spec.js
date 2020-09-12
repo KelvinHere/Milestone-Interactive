@@ -5,7 +5,6 @@
 * to the initialize method.
 */
 describe('Difficulty Settings', function() {
-
     describe('Time limits', function() {
         it('easy time limit should be 10 seconds', function() {
             gameBoard.initialize('easy');
@@ -51,40 +50,89 @@ describe('Difficulty Settings', function() {
             expect(gameBoard.cols).toBe(6);
         });
     });
+    
+    describe('Tile Selection Errors', function() {
+        describe('Type Errors', function() {
+            beforeEach(function() {
+                gameBoard.initialize('easy');
+            });
+            it('should return "Invalid input type for Row or Column" because of invalid type in row argument', function() {
+                let result = gameBoard.selectTile("InvalidArgument",1);
+                expect(result).toBe("Invalid input type for Row or Column");
+            });
+            it('should return "Invalid input type for Row or Column" because of invalid type in col argument', function() {
+                let result = gameBoard.selectTile(1,"InvalidArgument");
+                expect(result).toBe("Invalid input type for Row or Column");
+            });
+        });
 
- /*   describe('Tile Selection Variables', function() {
-        it('selectionA should be (1,1)', function() {
-            gameBoard.selectTile(1,1);
-            expect(gameBoard.selectionA).toBe(2);
+        describe('Range errors', function() {
+            describe('Easy difficulty range', function() {
+                beforeEach(function() {
+                    gameBoard.initialize('easy');
+                });
+                it('should return "Row or Column out of range" because row argument too large', function() {
+                    let result = gameBoard.selectTile(2,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because row argument too small', function() {
+                    let result = gameBoard.selectTile(-1,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too large', function() {
+                    let result = gameBoard.selectTile(1,2);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too Small', function() {
+                    let result = gameBoard.selectTile(1,-1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+            });
+
+            describe('Medium difficulty range', function() {
+                beforeEach(function() {
+                    gameBoard.initialize('medium');
+                });
+                it('should return "Row or Column out of range" because row argument too large', function() {
+                    let result = gameBoard.selectTile(4,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because row argument too small', function() {
+                    let result = gameBoard.selectTile(-1,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too large', function() {
+                    let result = gameBoard.selectTile(1,4);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too Small', function() {
+                    let result = gameBoard.selectTile(1,-1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+            });
+
+            describe('Hard difficulty range', function() {
+                beforeEach(function() {
+                    gameBoard.initialize('hard');
+                });
+                it('should return "Row or Column out of range" because row argument too large', function() {
+                    let result = gameBoard.selectTile(6,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because row argument too small', function() {
+                    let result = gameBoard.selectTile(-1,1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too large', function() {
+                    let result = gameBoard.selectTile(1,6);
+                    expect(result).toBe("Row or Column out of range");
+                });
+                it('should return "Row or Column out of range" because col argument too Small', function() {
+                    let result = gameBoard.selectTile(1,-1);
+                    expect(result).toBe("Row or Column out of range");
+                });
+            });
 
         });
-    });*/
-});
-/*
-describe('jQuery tests', function() {
-
-    beforeEach(function () {
-        setFixtures(`
-            <section class="game-container">
-                <div class="board-container">
-                    <table class="game-board">
-                        <tr class="row-0">
-                            <td class="col-0 tile unsolved" onclick="gameBoard.selectTile(0,0)"></td>
-                            <td class="col-1 tile unsolved" onclick="gameBoard.selectTile(0,1)"></td>
-                        </tr><tr class="row-1">
-                            <td class="col-0 tile unsolved" onclick="gameBoard.selectTile(1,0)"></td>
-                            <td class="col-1 tile unsolved" onclick="gameBoard.selectTile(1,1)"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="score-container">
-                    <div class="timer-container">
-                        <h2>Time Left</h2>
-                        <h3><span id="Timer">0</span><span> seconds</span></h3>
-                    </div>
-                </div>
-            </section>
-        `);
     });
-    
-});*/
+});
