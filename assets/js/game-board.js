@@ -146,12 +146,14 @@ let gameBoard = {
     // Selects a tile if allowed
     selectTile: function(r, c) {
         //Check input type
-        if ((!(Number.isInteger(r))) || (!(Number.isInteger(r)))) {
-            alert("Invalid input type for Row or Column");
+        if ((!(Number.isInteger(r))) || (!(Number.isInteger(c)))) {
+            /*return alert("Invalid input type for Row or Column");*/
+            return "Invalid input type for Row or Column";
         }
         //Check input range
-        if ((r > this.rows) || (r < 0) || (c > this.cols) || (c < 0)) {
-            alert("Row or Column out of range")
+        console.log(this.rows, this.cols);
+        if ((r+1 > this.rows) || (r < 0) || (c+1 > this.cols) || (c < 0)) {
+            return "Row or Column out of range";
         }
 
         let currentTile = $(`.row-${r} > .col-${c}`);
