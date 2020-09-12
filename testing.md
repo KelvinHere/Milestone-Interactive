@@ -1,5 +1,22 @@
 # Pairs - Testing Methodology
 
+## Contents
+
+1. [**Automated testing**](#automated-testing)
+    * [**Validation Tools**](#validation-tools)
+    * [**Jasmine Testing**](#jasmine-testing)
+        * [*Run Jasmine Tests Live*](#run-jasmine-tests-live)
+        * [*Add and Run Your Own Jasime Tests*](#add-and-run-your-own-jasime-tests)
+2. [**Manual Testing**](#manual-testing)
+    * [**Regarding The Game**](#regarding-the-game)
+    * [**Regarding Website Behaviour**](#regarding-website-behaviour)
+    * [**Platform Testing**](#platform-testing)
+    * [**User Testing**](#user-testing)
+3. [**User Story Testing**](#user-story-testing)
+4. [**Bugs**](#bugs)
+    * [**Solved**](#solved)
+    * [**Unsolved**](#unsolved)
+
 ## Automated testing
 
 ### Validation Tools
@@ -43,18 +60,17 @@ The link below will run my jasmine tests and show the results.
 
 * [Jasmine Testing](https://kelvinhere.github.io/Milestone-Interactive/assets/jasmine_testing/spec_runner.html)
 
-### Add and run your own Jasime tests
+### Add and Run Your Own Jasime Tests
 
 * Follow deployment in this repos [README.md](https://github.com/KelvinHere/Milestone-Interactive/blob/master/README.md)
 * Add your test to game-board-spec.js located in assets/jasmine_testing/spec
 * Open spec_runner.html located in assets/jasmine_testing
 
-
 ## Manual Testing
 
 Extensive manual testsing was done on this project to make sure the website and game work as expected.  Below is a list of tests carried out.
 
-### Regarding the game
+### Regarding The Game
 
  All game modes have been played to failure and completion to make sure :-
 - Each difficulty creates the correct sized grid
@@ -81,7 +97,7 @@ Extensive manual testsing was done on this project to make sure the website and 
 - If a user tries to modify the selectTile() method, it will catch invalid 'type' and out of range inputs.
 - The correct classes are added and removed from the game elements during gameplay
 
-### Regarding website behaviour
+### Regarding Website Behaviour
 
 The website has been tested to :-
 - Make sure the game board scales to the maximum (sensible) size of its container
@@ -111,7 +127,7 @@ The project was visually inspected, displayed and played without bugs or errors 
     - iPhone X
     - iPad / iPad Pro
 
-### User testing
+### User Testing
 
 *  The project has been tested extensivley by friends and family with varied devices.
 
