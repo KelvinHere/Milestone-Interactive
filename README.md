@@ -30,16 +30,11 @@ You are presented with a board of tiles.  The aim is to select each pair of matc
 4. * [**Testing**](#testing)
 5. * [**Technologies Used**](#technologies-used)
 6. * [**Deployment**](#deployment)
-7. * [**Technologies Used**](#technologies-used)
-8. * [**Credits**](#credits)
+7. * [**Credits**](#credits)
        * [**Content**](#content)
        * [**Media**](#media)
        * [**Acknowledgements**](#acknowledgements)
-  
- 
- 
-  
- 
+
 ## UX
  
 #### Project Purpose
@@ -246,7 +241,3 @@ Add this repository to your local workspace by :-
 * [Code Institute](https://codeinstitute.net/).
 * The poor Raspberry Pi that was thrashed within an inch of its life making this.
 * My mentor Spencer.
- 
- 
- 
-
