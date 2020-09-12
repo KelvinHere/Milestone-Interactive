@@ -5,6 +5,7 @@
 1. [**Automated testing**](#automated-testing)
     * [**Validation Tools**](#validation-tools)
     * [**Jasmine Testing**](#jasmine-testing)
+        * [*About These Tests*](#about-these-tests)
         * [*Run Jasmine Tests Live*](#run-jasmine-tests-live)
         * [*Add and Run Your Own Jasime Tests*](#add-and-run-your-own-jasime-tests)
 2. [**Manual Testing**](#manual-testing)
@@ -23,7 +24,7 @@
 
 **HTML and CSS Validation**
 
-The project has been checked with the [W3C Markup Validation Service](https://validator.w3.org/), the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) and the [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker).  Test links below.
+The project has passed checks with the [W3C Markup Validation Service](https://validator.w3.org/), the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) and the [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker).  Test links below.
 
 * [index.html markup test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F)
 * [index.html spell check](https://www.w3.org/2002/01/spellchecker?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&lang=en_US)
@@ -31,26 +32,24 @@ The project has been checked with the [W3C Markup Validation Service](https://va
 
 **Javascript**
 
-[JSHint](https://jshint.com/) version 2.12.0 has been used to check code quality with the qualifier of `/*jshint esversion: 6*/` at the top of the code.  No problems or warnings are present in the code using JSLint and the qualifier mentioned.
+[JSHint](https://jshint.com/) version 2.12.0 has been used to check code quality with the qualifier of `/*jshint esversion: 6*/` at the top of the code.  There are no problems or warnings are present in the code using JSLint and the qualifier mentioned.
 
 ## Jasmine Testing
 
-Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine through spec_runner.html which:-
+### About These Tests
+Jasime is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine through opening [spec_runner.html](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec_runner.html) which:-
 
 1. Loads :-
     * The Jasmine framework
     * jQuery
-    * The script to be tested [gameBoardClass.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/js/gameBoardClass.js)
-    * The tests to be performed on the script [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js)
-
-2. Jasmine then uses [gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js) to test against the target script.
-
-3. The results are displayed in an easy to read format in the browser.
+    * The script to be tested ([gameBoardClass.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/js/gameBoardClass.js))
+    * The tests to be performed on the script ([gameBoardClassSpec.js](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec/gameBoardClassSpec.js))
+2. The results are displayed in an easy to read format in the browser.
 
 These automated tests can be performed on any update to the code with a single click so can save many hours of what would be manual testing.  All jasmine tests were tested to purposley fail before any confidence was given to any in spec results.
 
 The tests in this project check 
-1. That variables for the games initialisation are correct depending on difficulty
+1. That variables for the games initialisation are correct depending on difficulty.
 2. That the grid sizes are the correct size for the difficulty level.
 3. Any invalid input to the games 'tileSelect' method are caught and dont allow the code to carry on executing with invalid types or ranges.
 

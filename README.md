@@ -179,7 +179,7 @@ Navigation and selection are consistent in the project.
 
 ## Testing
 
-[Testing documentation in this link](https://github.com/KelvinHere/Milestone-Interactive/blob/master/testing.md)
+[Testing documentation in this link (testing.md)](https://github.com/KelvinHere/Milestone-Interactive/blob/master/testing.md)
 
 ## Technologies Used
  
