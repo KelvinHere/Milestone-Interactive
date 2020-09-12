@@ -4,6 +4,7 @@
 * The object has to be initialized by passing one argument (easy, medium or hard) 
 * to the initialize method.
 */
+
 describe('Difficulty Settings', function() {
     describe('Time limits', function() {
         it('easy time limit should be 10 seconds', function() {
