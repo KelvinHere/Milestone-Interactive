@@ -34,9 +34,9 @@ The project has passed checks with the [W3C Markup Validation Service](https://v
 
 [JSHint](https://jshint.com/) version 2.12.0 has been used to check JavaScript code quality with the qualifier of `/*jshint esversion: 6*/` at the top of the code.  There are no problems or warnings are present in the code using JSLint and the qualifier mentioned.
 
-## Jasmine Testing
+### Jasmine Testing
 
-### About These Tests
+#### About These Tests
 Jasmine is an open source JavaScript testing framework, it allows tests to be run on JavaScript projects without intrusion.  This project uses jasmine through opening [spec_runner.html](https://github.com/KelvinHere/Milestone-Interactive/blob/master/assets/jasmine_testing/spec_runner.html) which:-
 
 1. Loads :-
@@ -53,13 +53,13 @@ The tests in this project check
 2. That the grid sizes are the correct size for the difficulty level.
 3. Any invalid input to the games 'tileSelect' method are caught and don't allow the code to carry on executing with invalid types or ranges.
 
-### Run Jasmine Tests Live
+#### Run Jasmine Tests Live
 
 The link below will run my jasmine tests and show the results.
 
 * [Jasmine Testing](https://kelvinhere.github.io/Milestone-Interactive/assets/jasmine_testing/spec_runner.html)
 
-### Add and Run Your Own Jasmine Tests
+#### Add and Run Your Own Jasmine Tests
 
 * Follow deployment in this repositories [README.md](https://github.com/KelvinHere/Milestone-Interactive/blob/master/README.md)
 * Add your test to game-board-spec.js located in assets/jasmine_testing/spec
