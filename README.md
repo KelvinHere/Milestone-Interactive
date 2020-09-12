@@ -14,7 +14,7 @@ You are presented with a board of tiles.  The aim is to select each pair of matc
    * [**Gameplay Rules & Player Experience**](#gameplay-rules-and-player-experience)
    * [**Wireframe Designs**](#wireframe-designs)
    * [**User Stories**](#user-stories)
-   * [**Developer and Business Purpose**](#developer-and-business-purpose)
+   * [**Business and Developer Goals**](#business-and-developer-goals)
    * [**Design Choices**](#design-choices)   
        * [*Colours and Fonts*](#colours-and-fonts)
        * [*Image Choices*](#image-choices)
@@ -76,7 +76,7 @@ As a user I want
 7. The tiles to be distinctly different from each other.
 8. The game to run on whatever device or screen size I decide to use.
  
-#### Developer and Business Purpose
+#### Business and Developer Goals
  
 Each feature must be well programmed, function properly and be bug free.  This will display a professional use of the programming language and test suite.
  
