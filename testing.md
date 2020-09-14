@@ -150,6 +150,8 @@ Users will want :-
     * Cartoon animals are used as the images as they are easy to distinguish, more so than photographs or random objects.
 8. The game to run on whatever device or screen size they decide to use.
     * The game is optimised for mobile, tablet and desktop.
+![Different Devices](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/devices.jpeg?raw=true "Example of how project can adapt to different devices and orientations")
+
 
 ## Bugs
 

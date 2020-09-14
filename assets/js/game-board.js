@@ -19,7 +19,7 @@ let gameBoard = {
     correctOneAudio: new Audio('assets/audio/correct-1.mp3'),
     winAudio: new Audio('assets/audio/win.mp3'),
 
-    //Sets bord size depending on difficulty and creates random positions for each tile
+    // Sets bord size depending on difficulty and creates random positions for each tile
     initialize: function(difficulty) {
         this.winPossible = true;
         if(difficulty == "easy"){
@@ -36,17 +36,17 @@ let gameBoard = {
             this.timeLeft = 90;
         }
 
-        //How many pairs of tiles are needed
+        // Calculate how many pairs of tiles are needed
         let pairsNeeded = (this.rows*this.cols)/2;
         let pairs = [];
 
-        // create list of pairs in array
+        // Create list of pairs in array
         for (let tileID = 0; tileID < pairsNeeded; tileID++) {
             pairs.push(tileID);
             pairs.push(tileID);
         }
 
-        // get random element from pairsNeeded and push to this.boardArray
+        // Get random element from pairsNeeded and push to this.boardArray
         for (let r = 0; r < this.rows; r++) {
             this.boardArray.push([]);
             for (let c = 0; c < this.cols; c++) {
@@ -68,7 +68,7 @@ let gameBoard = {
         let gameBoard = $(".game-board");
         let self = this;
 
-        //Create Grid and assign row and column numbers to each
+        // Create Grid and assign row and column numbers to each
         for (let r = 0; r < this.rows; r++) {
             $(gameBoard).append(`<tr class="row-${r}">`);
             for (let c = 0; c < this.cols; c++){
@@ -120,7 +120,7 @@ let gameBoard = {
         tileToHide.css("background-image", "").removeClass("tile-flip");
     },
 
-    //Compares two tiles
+    // Compares two tiles
     compareTiles: function(self, aRow, aCol, aTileRef, bRow, bCol, bTileRef) {
         // Hide Content of tile ready for comparison
         self.hideTile(aTileRef);
@@ -145,12 +145,12 @@ let gameBoard = {
 
     // Selects a tile if allowed
     selectTile: function(r, c) {
-        //Check input type
+        // Check input type
         if ((!(Number.isInteger(r))) || (!(Number.isInteger(c)))) {
             /*return alert("Invalid input type for Row or Column");*/
             return "Invalid input type for Row or Column";
         }
-        //Check input range
+        // Check input range
         console.log(this.rows, this.cols);
         if ((r+1 > this.rows) || (r < 0) || (c+1 > this.cols) || (c < 0)) {
             return "Row or Column out of range";
