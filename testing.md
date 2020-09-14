@@ -18,6 +18,7 @@
     * [**Solved**](#solved)
     * [**Unsolved**](#unsolved)
 
+[Back to README.MD](https://github.com/KelvinHere/Milestone-Interactive/blob/master/README.md)
 ## Automated testing
 
 ### Validation Tools
@@ -134,7 +135,7 @@ The project was visually inspected, displayed and played without bugs or errors 
 ## User Story Testing
 
 Users will want :-
-![User Stories Guide](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/user-story-1.jpg?raw=true "Image shows where user story is catered to")
+![User Stories Guide](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/user-stories-1.jpg?raw=true "Image shows where user story is catered to")
 1. To be playing the game as quickly as possible.
     * A single click can start the game at any difficulty level, no sub-menus or setup.
 2. To be given the instructions for the game as concisely as possible.
