@@ -170,7 +170,10 @@ Navigation and selection are consistent in the project.
  
 - Originally the game was score based and the aim was to complete the grid in as few attempts as possible.  You could cheat this easily by drawing the game board on paper.  The game was then adapted to a simple win/loss with a timer, showing you how much time you had to spare if you won.  This made the game much more frantic and fun at higher difficulty levels.
  
-- The layout was changed from the wireframe designs above to look more modern.  By removing the win/loss modals and splitting the play area to have a dedicated area for the timer, win/loss, retry button the experience felt more consistent and familiar.  This also leads to a more consistent experience on mobile which have more varied screen sizes.
+- The layout was changed from the wireframe designs above to look more modern see below.  By removing the win/loss modals and splitting the play area to have a dedicated area for the timer, win/loss, retry button the experience felt more consistent and familiar.  This also leads to a more consistent experience on mobile which have more varied screen sizes.  Below in order are Start Screen / Gameplay / Loss / Win.
+![New Design](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/new-design.jpg?raw=true "Images of new design")
+
+
  
 ## Testing
  

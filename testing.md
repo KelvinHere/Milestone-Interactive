@@ -134,6 +134,7 @@ The project was visually inspected, displayed and played without bugs or errors 
 ## User Story Testing
 
 Users will want :-
+![User Stories Guide](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/user-story-1.jpg?raw=true "Image shows where user story is catered to")
 1. To be playing the game as quickly as possible.
     * A single click can start the game at any difficulty level, no sub-menus or setup.
 2. To be given the instructions for the game as concisely as possible.
@@ -149,8 +150,9 @@ Users will want :-
 7. The tiles to be distinctly different from each other.
     * Cartoon animals are used as the images as they are easy to distinguish, more so than photographs or random objects.
 8. The game to run on whatever device or screen size they decide to use.
-    * The game is optimised for mobile, tablet and desktop.
-![Different Devices](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/devices.jpeg?raw=true "Example of how project can adapt to different devices and orientations")
+    * The game is optimised for mobile, tablet and desktop as shown below.
+
+![Different Devices](https://github.com/KelvinHere/Milestone-Interactive/blob/master/design/completed/devices.jpg?raw=true "Example of how project can adapt to different devices and orientations")
 
 
 ## Bugs
