@@ -89,7 +89,7 @@ The website has a simple four colour design (two greens and two greys) for all t
  
 All fonts are displayed on a contrasting background for easy readability.
  
-The green header and footer are designed to frame the middle section of the page where the game will be played
+The green header and footer are designed to frame the middle section of the page where the game will be played.
  
 The grey middle sections are designed to be as mute as possible so when the game starts there is little distraction or interference from the background as the user is choosing tiles.
  
@@ -224,8 +224,14 @@ Add this repository to your local workspace by :-
  
 5. Cloning will be completed when your terminal is waiting for its next command.
 6. For more information or changes in the cloning procedure [>Click Here<](https://github.com/git-guides/git-clone)
- 
- 
+
+Project Development :-
+* This project was developed using GitPod.
+* After files are created or modified they are committed to a GitHub repository by :-
+    - adding the modified files locally using `git add .`
+    - commiting the modified files with a message of changes using `git commit -m "changes here"`
+    - pushing the new commit to the master branch on GitHub repository with `git push`
+
 ## Credits
 ### Content
  

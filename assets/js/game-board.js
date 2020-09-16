@@ -1,8 +1,7 @@
-/*! Contains code for gameBoard object for the Pairs matching game
-* 
-* This object contains methods for the logic of the pairs memory game.
-* The object has to be initialized by passing one argument (easy, medium or hard) 
-* to the initialize method.
+/* Contains code for the gameBoard object for the Pairs matching game.
+This object contains methods for the logic of the pairs memory game.
+The object has to be initialized by passing one argument (easy, medium or hard) 
+to the initialize method contained within it.
 */
 
 let gameBoard = {

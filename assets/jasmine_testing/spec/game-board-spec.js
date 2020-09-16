@@ -1,8 +1,5 @@
-/*! Contains Jasmine Tests for gameBoardClass.js
-* 
-* This object contains methods for the logic of the pairs memory game.
-* The object has to be initialized by passing one argument (easy, medium or hard) 
-* to the initialize method.
+/* This file contains Jasmine Tests for assets/js/game-board.js
+It can be executed by opening assets/jasmine_testing/spec_runner.html
 */
 
 describe('Difficulty Settings', function() {
