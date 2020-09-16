@@ -65,7 +65,7 @@ As a user I want
 1. To be playing the game as quickly as possible.
 2. To be given the instructions for the game as concisely as possible.
 3. The game to give me suitable feedback for my inputs through sound or animation.
-4. Te be able to restart the game quickly.
+4. To be able to restart the game quickly.
 5. To be able to change the games difficulty to my skill level.
 6. To be given a challenge only if I want it.
 7. The tiles to be distinctly different from each other.
@@ -154,6 +154,8 @@ Navigation and selection are consistent in the project.
 - The game grid has been created to scale to fill its parent element (to a sensible limit), this allows the tiles to be as large as possible.
  
 - All tile images are downloaded when first coming to the website to avoid loading problems when playing (some tiles would only appear after a few seconds when selected).  This was solved by loading them into the footer with a zero height and width.
+
+- The hidden images mentioned above are not for user viewing so they do not have alternate text and are set to `alt""` to follow [w3.org](https://www.w3.org/) guidelines.
  
 ### Future Features
  
@@ -231,6 +233,8 @@ Project Development :-
     - adding the modified files locally using `git add .`
     - commiting the modified files with a message of changes using `git commit -m "changes here"`
     - pushing the new commit to the master branch on GitHub repository with `git push`
+
+* During development a new branch on GitHub was created via pull request.  This was for a major change to the code (the game board was refactored to an object) and allowed experimentation without affecting the master branch.  This new branch worked out well and was merged into the master branch.
 
 ## Credits
 ### Content

@@ -25,11 +25,13 @@
 
 **HTML and CSS Validation**
 
-The project has passed checks with the [W3C Markup Validation Service](https://validator.w3.org/), the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) and the [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker).  Test links below.
+The project has passed checks with the [W3C Markup Validation Service](https://validator.w3.org/), the [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) and the [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker).  Test links and false positives below.
 
 * [index.html markup test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F)
 * [index.html spell check](https://www.w3.org/2002/01/spellchecker?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&lang=en_US)
 * [style.css validation test](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkelvinhere.github.io%2FMilestone-Interactive%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+* "KelvinHere" is a false positive detected in the spell checker.
 
 **Javascript**
 
@@ -82,7 +84,7 @@ Extensive manual testing was performed on this project to make sure the website 
 - When you run out of time the board is removed and you are prompted of a loss
 - When you win the win jingle plays and the board remains completed
 - When a pair is solved you cannot re-select the solved tiles in any way
-- When the player clicks rapidly they cannot select more than one tile
+- When the player clicks rapidly they cannot select any more than two tiles
 - If the player reloads the page halfway through a game the game resets completely including solved tiles and timer
 - The player cannot select tiles after the timer has run out
 - On win or loss the 'Try again' button is displayed
