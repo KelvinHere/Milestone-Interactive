@@ -32,7 +32,7 @@ let gameBoard = {
         } else {
             this.rows = 6;
             this.cols = 6;
-            this.timeLeft = 110;
+            this.timeLeft = 130;
         }
 
         // Calculate how many pairs of tiles are needed
